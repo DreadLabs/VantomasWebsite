@@ -1,5 +1,5 @@
 <?php
-namespace DreadLabs\VantomasWebite\Http\NetHttpAdapter;
+namespace DreadLabs\VantomasWebsite\Http\NetHttpAdapter;
 
 use DreadLabs\VantomasWebsite\Http\ClientInterface;
 use DreadLabs\VantomasWebsite\Http\ResponseInterface;
