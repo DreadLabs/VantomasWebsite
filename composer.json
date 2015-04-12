@@ -27,6 +27,5 @@
       "DreadLabs\\VantomasWebsite\\": "src/",
       "DreadLabs\\VantomasWebsite\\Tests\\": "tests/"
     }
-  },
-  "target-dir": "DreadLabs/VantomasWebsite"
+  }
 }
