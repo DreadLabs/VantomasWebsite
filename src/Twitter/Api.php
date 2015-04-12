@@ -1,15 +1,14 @@
 <?php
-namespace DreadLabs\VantomasWebsite;
+namespace DreadLabs\VantomasWebsite\Twitter;
 
 use DreadLabs\VantomasWebsite\Twitter\AccessControl\AuthenticationInterface;
 use DreadLabs\VantomasWebsite\Twitter\AccessControl\AuthorizationInterface;
-use DreadLabs\VantomasWebsite\Twitter\ConfigurationInterface;
 use DreadLabs\VantomasWebsite\Http\ClientInterface;
 
 /**
  * Simple Twitter API service.
  */
-class Twitter implements TwitterInterface
+class Api implements ApiInterface
 {
 
     /**

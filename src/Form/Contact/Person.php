@@ -1,5 +1,5 @@
 <?php
-namespace DreadLabs\VantomasWebsite\ContactForm;
+namespace DreadLabs\VantomasWebsite\Form\Contact;
 
 class Person
 {

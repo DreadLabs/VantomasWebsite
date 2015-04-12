@@ -1,21 +1,21 @@
 <?php
-namespace DreadLabs\VantomasWebsite;
+namespace DreadLabs\VantomasWebsite\Form;
 
-use DreadLabs\VantomasWebsite\ContactForm\Message;
-use DreadLabs\VantomasWebsite\ContactForm\Person;
+use DreadLabs\VantomasWebsite\Form\Contact\Message;
+use DreadLabs\VantomasWebsite\Form\Contact\Person;
 use DreadLabs\VantomasWebsite\Mail\ConveyableInterface;
 use DreadLabs\VantomasWebsite\Mail\Message\ViewInterface;
 
-class ContactForm implements ConveyableInterface
+class Contact implements ConveyableInterface
 {
 
     /**
-     * @var \DreadLabs\VantomasWebsite\ContactForm\Person
+     * @var \DreadLabs\VantomasWebsite\Form\Contact\Person
      */
     protected $person;
 
     /**
-     * @var \DreadLabs\VantomasWebsite\ContactForm\Message
+     * @var \DreadLabs\VantomasWebsite\Form\Contact\Message
      */
     protected $message;
 

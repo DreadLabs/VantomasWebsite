@@ -1,7 +1,7 @@
 <?php
-namespace DreadLabs\VantomasWebsite;
+namespace DreadLabs\VantomasWebsite\Twitter;
 
-interface TwitterInterface
+interface ApiInterface
 {
 
     public function addParameter($key, $value);

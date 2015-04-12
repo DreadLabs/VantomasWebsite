@@ -1,8 +1,8 @@
 <?php
-namespace DreadLabs\VantomasWebsite\ContactForm;
+namespace DreadLabs\VantomasWebsite\Form\Contact;
 
 /**
- * Abstract ContactForm validation contract
+ * Abstract Contact form validation contract
  */
 abstract class AbstractValidation
 {
