@@ -23,7 +23,10 @@
     "sebastian/phpcpd" : "~2.0"
   },
   "autoload": {
-    "psr-4": { "DreadLabs\\VantomasWebsite\\": "./src/" }
+    "psr-4": {
+      "DreadLabs\\VantomasWebsite\\": "src/",
+      "DreadLabs\\VantomasWebsite\\Tests\\": "tests/"
+    }
   },
-  "target-dir": "DreadLabs/VantomasWebsite",
+  "target-dir": "DreadLabs/VantomasWebsite"
 }
