@@ -7,7 +7,7 @@ use DreadLabs\VantomasWebsite\Twitter\AccessControl\Exception\AuthorizationFaile
 use DreadLabs\VantomasWebsite\Twitter\AccessControl\Exception\InvalidBearerTokenTypeException;
 use DreadLabs\VantomasWebsite\Twitter\CacheInterface;
 use DreadLabs\VantomasWebsite\Twitter\ConfigurationInterface;
-use DreadLabs\Net\Http\ClientInterface;
+use DreadLabs\VantomasWebsite\Http\ClientInterface;
 
 class BearerToken implements AuthorizationInterface
 {

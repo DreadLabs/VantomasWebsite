@@ -12,7 +12,9 @@
     }
   ],
   "require": {
-    "php": ">=5.4.4"
+    "php": ">=5.4.4",
+    "net/http": "~1.1",
+    "arg/tagcloud": "*@dev"
   },
   "require-dev": {
     "phpunit/phpunit" : "~4.0",

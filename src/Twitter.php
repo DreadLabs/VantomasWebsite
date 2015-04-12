@@ -4,7 +4,7 @@ namespace DreadLabs\VantomasWebsite;
 use DreadLabs\VantomasWebsite\Twitter\AccessControl\AuthenticationInterface;
 use DreadLabs\VantomasWebsite\Twitter\AccessControl\AuthorizationInterface;
 use DreadLabs\VantomasWebsite\Twitter\ConfigurationInterface;
-use DreadLabs\Net\Http\ClientInterface;
+use DreadLabs\VantomasWebsite\Http\ClientInterface;
 
 /**
  * Simple Twitter API service.
