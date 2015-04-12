@@ -1,15 +1,16 @@
 <?php
 namespace DreadLabs\VantomasWebsite\Twitter;
 
-interface ConfigurationInterface {
+interface ConfigurationInterface
+{
 
-	public function getUserAgent();
+    public function getUserAgent();
 
-	public function getBearerCacheLifetime();
+    public function getBearerCacheLifetime();
 
-	public function getConsumerKey();
+    public function getConsumerKey();
 
-	public function getConsumerSecret();
+    public function getConsumerSecret();
 
-	public function getBearerTokenUrl();
+    public function getBearerTokenUrl();
 }

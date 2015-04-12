@@ -1,11 +1,12 @@
 <?php
 namespace DreadLabs\VantomasWebsite;
 
-interface TwitterInterface {
+interface TwitterInterface
+{
 
-	public function addParameter($key, $value);
+    public function addParameter($key, $value);
 
-	public function getTimeline();
+    public function getTimeline();
 
-	public function getSearchResult();
+    public function getSearchResult();
 }

@@ -1,11 +1,11 @@
 <?php
 namespace DreadLabs\VantomasWebsite\Taxonomy;
 
-interface TagManagerInterface {
+interface TagManagerInterface
+{
 
-	/**
-	 * @return TagCloudInterface
-	 */
-	public function getCloud();
-
+    /**
+     * @return TagCloudInterface
+     */
+    public function getCloud();
 }

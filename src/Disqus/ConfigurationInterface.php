@@ -2,15 +2,16 @@
 namespace DreadLabs\VantomasWebsite\Disqus;
 
 
-interface ConfigurationInterface {
+interface ConfigurationInterface
+{
 
-	/**
-	 * @return string
-	 */
-	public function getBaseUrl();
+    /**
+     * @return string
+     */
+    public function getBaseUrl();
 
-	/**
-	 * @return string
-	 */
-	public function getApiKey();
+    /**
+     * @return string
+     */
+    public function getApiKey();
 }

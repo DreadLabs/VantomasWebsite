@@ -3,13 +3,14 @@ namespace DreadLabs\VantomasWebsite\Archive;
 
 use DreadLabs\VantomasWebsite\Page\PageType;
 
-interface DateRepositoryInterface {
+interface DateRepositoryInterface
+{
 
-	/**
-	 * Finds archive dates
-	 *
-	 * @param PageType $pageType
-	 * @return Date[]
-	 */
-	public function find(PageType $pageType);
+    /**
+     * Finds archive dates
+     *
+     * @param PageType $pageType
+     * @return Date[]
+     */
+    public function find(PageType $pageType);
 }

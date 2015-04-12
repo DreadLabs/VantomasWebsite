@@ -3,12 +3,12 @@ namespace DreadLabs\VantomasWebsite\Mail;
 
 use DreadLabs\VantomasWebsite\Mail\Message\ViewInterface;
 
-interface ConveyableInterface {
+interface ConveyableInterface
+{
 
-	/**
-	 * @param ViewInterface $view
-	 * @return void
-	 */
-	public function setMailMessageViewData(ViewInterface $view);
-
+    /**
+     * @param ViewInterface $view
+     * @return void
+     */
+    public function setMailMessageViewData(ViewInterface $view);
 }

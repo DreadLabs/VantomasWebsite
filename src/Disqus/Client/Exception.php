@@ -1,5 +1,6 @@
 <?php
 namespace DreadLabs\VantomasWebsite\Disqus\Client;
 
-class Exception extends \Exception {
+class Exception extends \Exception
+{
 }

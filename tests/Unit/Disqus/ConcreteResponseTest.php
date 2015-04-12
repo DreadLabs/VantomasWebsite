@@ -3,38 +3,42 @@ namespace DreadLabs\VantomasWebsite\Tests\Unit\Disqus;
 
 use DreadLabs\VantomasWebsite\Tests\Fixture\Disqus\DummyResponse;
 
-class ConcreteResponseTest extends \PHPUnit_Framework_TestCase {
+class ConcreteResponseTest extends \PHPUnit_Framework_TestCase
+{
 
-	protected $validContent = '';
+    protected $validContent = '';
 
-	protected $invalidContent = '';
+    protected $invalidContent = '';
 
-	public function setUp() {
-		$this->validContent = file_get_contents(dirname(__FILE__) . '/../../Fixture/Disqus/ValidResponseContent.json');
+    public function setUp()
+    {
+        $this->validContent = file_get_contents(dirname(__FILE__) . '/../../Fixture/Disqus/ValidResponseContent.json');
 
-		$this->invalidContent = file_get_contents(dirname(__FILE__) . '/../../Fixture/Disqus/InvalidResponseContent.json');
-	}
+        $this->invalidContent = file_get_contents(dirname(__FILE__) . '/../../Fixture/Disqus/InvalidResponseContent.json');
+    }
 
-	public function testContentReturnsAnInstanceOfStdClass() {
-		$response = new DummyResponse();
+    public function testContentReturnsAnInstanceOfStdClass()
+    {
+        $response = new DummyResponse();
 
-		$response->setContent(json_decode($this->validContent));
+        $response->setContent(json_decode($this->validContent));
 
-		$content = $response->getContent();
+        $content = $response->getContent();
 
-		$this->assertInstanceOf('stdClass', $content, 'AbstractResponse::getContent() returns a stdClass instance.');
-	}
+        $this->assertInstanceOf('stdClass', $content, 'AbstractResponse::getContent() returns a stdClass instance.');
+    }
 
-	public function testContentThrowsAnExceptionIfResponseContainsAnError() {
-		$this->setExpectedException(
-			'DreadLabs\\VantomasWebsite\\Disqus\\Response\\Exception',
-			'This is an example erroneous response message.'
-		);
+    public function testContentThrowsAnExceptionIfResponseContainsAnError()
+    {
+        $this->setExpectedException(
+            'DreadLabs\\VantomasWebsite\\Disqus\\Response\\Exception',
+            'This is an example erroneous response message.'
+        );
 
-		$response = new DummyResponse();
+        $response = new DummyResponse();
 
-		$response->setContent(json_decode($this->invalidContent));
+        $response->setContent(json_decode($this->invalidContent));
 
-		$response->getContent();
-	}
+        $response->getContent();
+    }
 }

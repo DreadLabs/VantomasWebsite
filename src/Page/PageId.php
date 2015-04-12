@@ -1,29 +1,33 @@
 <?php
 namespace DreadLabs\VantomasWebsite\Page;
 
-class PageId {
+class PageId
+{
 
-	/**
-	 * @var int
-	 */
-	private $value;
+    /**
+     * @var int
+     */
+    private $value;
 
-	public function __construct($pageId) {
-		$this->value = (int) $pageId;
-	}
+    public function __construct($pageId)
+    {
+        $this->value = (int) $pageId;
+    }
 
-	/**
-	 * @return int
-	 */
-	public function getValue() {
-		return $this->value;
-	}
+    /**
+     * @return int
+     */
+    public function getValue()
+    {
+        return $this->value;
+    }
 
-	/**
-	 * @param string $idString
-	 * @return self
-	 */
-	public static function fromString($idString) {
-		return new static((int) $idString);
-	}
+    /**
+     * @param string $idString
+     * @return self
+     */
+    public static function fromString($idString)
+    {
+        return new static((int) $idString);
+    }
 }

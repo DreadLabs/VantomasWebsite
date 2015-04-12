@@ -1,18 +1,21 @@
 <?php
 namespace DreadLabs\VantomasWebsite\Media;
 
-class Identifier {
+class Identifier
+{
 
-	/**
-	 * @var string
-	 */
-	private $value;
+    /**
+     * @var string
+     */
+    private $value;
 
-	public function __construct($value) {
-		$this->value = (string) $value;
-	}
+    public function __construct($value)
+    {
+        $this->value = (string) $value;
+    }
 
-	public function getValue() {
-		return $this->value;
-	}
+    public function getValue()
+    {
+        return $this->value;
+    }
 }

@@ -10,23 +10,25 @@ use DreadLabs\VantomasWebsite\Tests\Fixture\Disqus\DummyResource;
  *
  * @author Thomas Juhnke <tommy@van-tomas.de>
  */
-class ApiTest extends \PHPUnit_Framework_TestCase {
+class ApiTest extends \PHPUnit_Framework_TestCase
+{
 
-	public function testClientProxy() {
-		$configuration = new DummyConfiguration();
+    public function testClientProxy()
+    {
+        $configuration = new DummyConfiguration();
 
-		/* @var $client \PHPUnit_Framework_MockObject_MockObject|\DreadLabs\VantomasWebsite\Tests\Fixture\Disqus\DummyClient */
-		$client = $this->getMock('DreadLabs\\VantomasWebsite\\Tests\\Fixture\\Disqus\\DummyClient');
-		$client->expects($this->once())->method('connectWith')->with('foobar');
+        /* @var $client \PHPUnit_Framework_MockObject_MockObject|\DreadLabs\VantomasWebsite\Tests\Fixture\Disqus\DummyClient */
+        $client = $this->getMock('DreadLabs\\VantomasWebsite\\Tests\\Fixture\\Disqus\\DummyClient');
+        $client->expects($this->once())->method('connectWith')->with('foobar');
 
-		$resource = new DummyResource();
+        $resource = new DummyResource();
 
-		$api = new Api(
-			$configuration,
-			$client,
-			$resource
-		);
+        $api = new Api(
+            $configuration,
+            $client,
+            $resource
+        );
 
-		$api->connectWith('foobar');
-	}
+        $api->connectWith('foobar');
+    }
 }

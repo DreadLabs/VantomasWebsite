@@ -1,11 +1,12 @@
 <?php
 namespace DreadLabs\VantomasWebsite\Disqus\Response;
 
-interface ResolverInterface {
+interface ResolverInterface
+{
 
-	/**
-	 * @param string $format
-	 * @return AbstractResponse
-	 */
-	public function resolve($format);
+    /**
+     * @param string $format
+     * @return AbstractResponse
+     */
+    public function resolve($format);
 }
