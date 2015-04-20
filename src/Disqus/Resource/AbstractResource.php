@@ -9,7 +9,7 @@ abstract class AbstractResource
      *
      * @var string
      */
-    protected $api_key = '';
+    protected $apiKey = '';
 
     /**
      * sets the API key
@@ -17,9 +17,9 @@ abstract class AbstractResource
      * @param string $apiKey
      * @return void
      */
-    public function setApi_key($apiKey)
+    public function setApiKey($apiKey)
     {
-        $this->api_key = $apiKey;
+        $this->apiKey = $apiKey;
     }
 
     /**
@@ -53,6 +53,9 @@ abstract class AbstractResource
         foreach ($parameters as $parameterName => $parameterValue) {
             if (true === is_null($parameterValue)) {
                 continue;
+            }
+            if ($parameterName === 'apiKey') {
+                $parameterName = 'api_key';
             }
 
             $urlParameters[] = $this->getPathPartForParameter($parameterName, $parameterValue);
