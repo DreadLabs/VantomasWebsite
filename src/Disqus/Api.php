@@ -60,7 +60,7 @@ class Api implements ApiInterface
      */
     public function with(array $parameters)
     {
-        $parameters['api_key'] = $this->configuration->getApiKey();
+        $parameters['apiKey'] = $this->configuration->getApiKey();
 
         $this->resource->setParameters($parameters);
 
