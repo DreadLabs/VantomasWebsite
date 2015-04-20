@@ -17,8 +17,7 @@ class ApiTest extends \PHPUnit_Framework_TestCase
     {
         $configuration = new DummyConfiguration();
 
-        /* @var $client \PHPUnit_Framework_MockObject_MockObject|\DreadLabs\VantomasWebsite\Tests\Fixture\Disqus\DummyClient */
-        $client = $this->getMock('DreadLabs\\VantomasWebsite\\Tests\\Fixture\\Disqus\\DummyClient');
+        $client = $this->getMock(DummyClient::class);
         $client->expects($this->once())->method('connectWith')->with('foobar');
 
         $resource = new DummyResource();

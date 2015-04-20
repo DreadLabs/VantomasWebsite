@@ -20,9 +20,9 @@ class ResourceTest extends \PHPUnit_Framework_TestCase
 
     public function setUp()
     {
-        $this->resourceResolver = $this->getMock('DreadLabs\\VantomasWebsite\\Tests\\Fixture\\Disqus\\DummyResourceResolver');
+        $this->resourceResolver = $this->getMock(DummyResourceResolver::class);
 
-        $this->concreteResource = $this->getMock('DreadLabs\\VantomasWebsite\\Tests\\Fixture\\Disqus\\DummyConcreteResource');
+        $this->concreteResource = $this->getMock(DummyConcreteResource::class);
     }
 
     public function testSettingResourceSignatureInitializesConcreteResource()

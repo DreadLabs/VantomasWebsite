@@ -20,9 +20,9 @@ class ResponseTest extends \PHPUnit_Framework_TestCase
 
     public function setUp()
     {
-        $this->responseResolver = $this->getMock('DreadLabs\\VantomasWebsite\\Tests\\Fixture\\Disqus\\DummyResponseResolver');
+        $this->responseResolver = $this->getMock(DummyResponseResolver::class);
 
-        $this->concreteResponse = $this->getMock('DreadLabs\\VantomasWebsite\\Tests\\Fixture\\Disqus\\DummyResponse');
+        $this->concreteResponse = $this->getMock(DummyResponse::class);
     }
 
     public function testSetFormatInitializesConcreteResponseImplementation()

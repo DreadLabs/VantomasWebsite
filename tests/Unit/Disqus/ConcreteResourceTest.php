@@ -1,6 +1,8 @@
 <?php
 namespace DreadLabs\VantomasWebsite\Tests\Unit\Disqus;
 
+use DreadLabs\VantomasWebsite\Tests\Fixture\Disqus\DummyConcreteResource;
+
 class ConcreteResourceTest extends \PHPUnit_Framework_TestCase
 {
 
@@ -10,9 +12,8 @@ class ConcreteResourceTest extends \PHPUnit_Framework_TestCase
 
     public function testGetPathParametersWillCallAccordingSetterMethod()
     {
-        /* @var $resource \PHPUnit_Framework_MockObject_MockObject|\DreadLabs\VantomasWebsite\Tests\Fixture\Disqus\DummyConcreteResource */
         $resource = $this->getMock(
-            'DreadLabs\\VantomasWebsite\\Tests\\Fixture\\Disqus\\DummyConcreteResource',
+            DummyConcreteResource::class,
             array('setFoo')
         );
 
@@ -29,8 +30,7 @@ class ConcreteResourceTest extends \PHPUnit_Framework_TestCase
 
     public function testGetPathFlatsArrays()
     {
-        /* @var $resource \PHPUnit_Framework_MockObject_MockObject|\DreadLabs\VantomasWebsite\Tests\Fixture\Disqus\DummyConcreteResource */
-        $resource = $this->getMock('DreadLabs\\VantomasWebsite\\Tests\\Fixture\\Disqus\\DummyConcreteResource', null);
+        $resource = $this->getMock(DummyConcreteResource::class, null);
 
         $parameters = array(
             'foo' => array(

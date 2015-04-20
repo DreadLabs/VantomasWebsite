@@ -3,6 +3,7 @@ namespace DreadLabs\VantomasWebsite\Tests\Unit\Disqus;
 
 use DreadLabs\VantomasWebsite\Disqus\Client;
 use DreadLabs\VantomasWebsite\Tests\Fixture\Disqus\DummyClient;
+use DreadLabs\VantomasWebsite\Tests\Fixture\Disqus\DummyClientResolver;
 use DreadLabs\VantomasWebsite\Tests\Fixture\Disqus\DummyResource;
 use DreadLabs\VantomasWebsite\Tests\Fixture\Disqus\DummyResponse;
 
@@ -10,7 +11,7 @@ class ClientTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
-     * @var \PHPUnit_Framework_MockObject_MockObject|\DreadLabs\VantomasWebsite\Tests\Fixture\Disqus\DummyClientResolver
+     * @var \PHPUnit_Framework_MockObject_MockObject|DummyClientResolver
      */
     protected $clientResolver = null;
 
@@ -31,13 +32,13 @@ class ClientTest extends \PHPUnit_Framework_TestCase
 
     public function setUp()
     {
-        $this->clientResolver = $this->getMock('DreadLabs\\VantomasWebsite\\Tests\\Fixture\\Disqus\\DummyClientResolver');
+        $this->clientResolver = $this->getMock(DummyClientResolver::class);
 
-        $this->concreteClient = $this->getMock('DreadLabs\\VantomasWebsite\\Tests\\Fixture\\Disqus\\DummyClient');
+        $this->concreteClient = $this->getMock(DummyClient::class);
 
-        $this->resource = $this->getMock('DreadLabs\\VantomasWebsite\\Tests\\Fixture\\Disqus\\DummyResource');
+        $this->resource = $this->getMock(DummyResource::class);
 
-        $this->response = $this->getMock('DreadLabs\\VantomasWebsite\\Tests\\Fixture\\Disqus\\DummyResponse');
+        $this->response = $this->getMock(DummyResponse::class);
     }
 
     public function testClientResolverGivesConcreteClient()
