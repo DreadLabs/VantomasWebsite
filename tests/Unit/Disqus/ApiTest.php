@@ -2,6 +2,7 @@
 namespace DreadLabs\VantomasWebsite\Tests\Unit\Disqus;
 
 use DreadLabs\VantomasWebsite\Disqus\Api;
+use DreadLabs\VantomasWebsite\Tests\Fixture\Disqus\DummyClient;
 use DreadLabs\VantomasWebsite\Tests\Fixture\Disqus\DummyConfiguration;
 use DreadLabs\VantomasWebsite\Tests\Fixture\Disqus\DummyResource;
 
