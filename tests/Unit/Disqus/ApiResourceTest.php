@@ -72,7 +72,7 @@ class ApiResourceTest extends \PHPUnit_Framework_TestCase
 
         $expectedParameters = array(
             'forum' => 'fooBarForum',
-            'api_key' => 'foo-bar-baz',
+            'apiKey' => 'foo-bar-baz',
         );
 
         $response = new DummyResponse();
