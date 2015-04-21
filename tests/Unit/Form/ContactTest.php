@@ -9,20 +9,34 @@ use DreadLabs\VantomasWebsite\Tests\Unit\Mail\Message\ViewDummy;
 class ContactTest extends \PHPUnit_Framework_TestCase
 {
 
+    /**
+     * @var \PHPUnit_Framework_MockObject_MockObject|Person
+     */
+    protected $personMock;
+
+    /**
+     * @var \PHPUnit_Framework_MockObject_MockObject|Message
+     */
+    protected $messageMock;
+
+    public function setUp()
+    {
+        $this->personMock = $this->getMock(Person::class);
+        $this->messageMock = $this->getMock(Message::class);
+    }
+
     public function testMailMessageViewDataSetsDesiredVariablesInView()
     {
-        $personMock = $this->getMock(Person::class);
-        $messageMock = $this->getMock(Message::class);
 
         $sut = new Contact();
-        $sut->setPerson($personMock);
-        $sut->setMessage($messageMock);
+        $sut->setPerson($this->personMock);
+        $sut->setMessage($this->messageMock);
 
         $viewMock = $this->getMock(ViewDummy::class);
 
         $fixture = array(
-            'person' => $personMock,
-            'message' => $messageMock,
+            'person' => $this->personMock,
+            'message' => $this->messageMock,
         );
 
         $viewMock->expects($this->once())->method('setVariables')->with($this->equalTo($fixture));
@@ -30,4 +44,30 @@ class ContactTest extends \PHPUnit_Framework_TestCase
         $sut->setMailMessageViewData($viewMock);
     }
 
+    public function testContactReturnsSamePerson()
+    {
+        $sut = new Contact();
+        $sut->setPerson($this->personMock);
+
+        $this->assertSame($this->personMock, $sut->getPerson());
+    }
+
+    public function testContactReturnsSameMessage()
+    {
+        $sut = new Contact();
+        $sut->setMessage($this->messageMock);
+
+        $this->assertSame($this->messageMock, $sut->getMessage());
+    }
+
+    public function testContactReturnsSameCreationDate()
+    {
+        $creationDate = new \DateTime();
+
+        $sut = new Contact();
+        $sut->setCreationDate($creationDate);
+
+        $this->assertSame($creationDate, $sut->getCreationDate());
+
+    }
 }
