@@ -14,7 +14,7 @@
   "require": {
     "php": ">=5.5.14",
     "net/http": "~1.1",
-    "arg/tagcloud": "*@dev"
+    "arg/tagcloud": "dev-master#aa5bf828ee5f5be28d4cd3ee1a19c75dcf924a83"
   },
   "require-dev": {
     "phpunit/phpunit" : "~4.0",
