@@ -12,11 +12,9 @@ class PageTypeCollection implements PageTypeCollectionInterface
     private $pageTypes;
 
     /**
-     * (PHP 5 &gt;= 5.0.0)<br/>
-     * Retrieve an external iterator
-     * @link http://php.net/manual/en/iteratoraggregate.getiterator.php
-     * @return Traversable An instance of an object implementing <b>Iterator</b> or
-     * <b>Traversable</b>
+     * Retrieve the iterator for PageTypes
+     *
+     * @return Traversable An instance of an object implementing Iterator or Traversable
      */
     public function getIterator()
     {
@@ -24,16 +22,10 @@ class PageTypeCollection implements PageTypeCollectionInterface
     }
 
     /**
-     * (PHP 5 &gt;= 5.0.0)<br/>
-     * Whether a offset exists
-     * @link http://php.net/manual/en/arrayaccess.offsetexists.php
-     * @param mixed $offset <p>
-     * An offset to check for.
-     * </p>
+     * Whether an offset exists
+     *
+     * @param mixed $offset An offset to check for.
      * @return boolean true on success or false on failure.
-     * </p>
-     * <p>
-     * The return value will be casted to boolean if non-boolean was returned.
      */
     public function offsetExists($offset)
     {
@@ -41,13 +33,10 @@ class PageTypeCollection implements PageTypeCollectionInterface
     }
 
     /**
-     * (PHP 5 &gt;= 5.0.0)<br/>
      * Offset to retrieve
-     * @link http://php.net/manual/en/arrayaccess.offsetget.php
-     * @param mixed $offset <p>
-     * The offset to retrieve.
-     * </p>
-     * @return mixed Can return all value types.
+     *
+     * @param mixed $offset The offset to retrieve.
+     * @return PageType
      */
     public function offsetGet($offset)
     {
@@ -55,15 +44,10 @@ class PageTypeCollection implements PageTypeCollectionInterface
     }
 
     /**
-     * (PHP 5 &gt;= 5.0.0)<br/>
      * Offset to set
-     * @link http://php.net/manual/en/arrayaccess.offsetset.php
-     * @param mixed $offset <p>
-     * The offset to assign the value to.
-     * </p>
-     * @param mixed $value <p>
-     * The value to set.
-     * </p>
+     *
+     * @param mixed $offset The offset to assign the value to.
+     * @param mixed $value The value to set.
      * @return void
      */
     public function offsetSet($offset, $value)
@@ -76,19 +60,16 @@ class PageTypeCollection implements PageTypeCollectionInterface
     }
 
     /**
-     * (PHP 5 &gt;= 5.0.0)<br/>
      * Offset to unset
-     * @link http://php.net/manual/en/arrayaccess.offsetunset.php
-     * @param mixed $offset <p>
-     * The offset to unset.
-     * </p>
+     *
+     * @param mixed $offset The offset to unset.
      * @return void
      */
     public function offsetUnset($offset)
     {
         if ($offset instanceof PageType) {
-            $this->pageTypes = array_filter($this->pageTypes, function ($v) use ($offset) {
-                return $v !== $offset;
+            $this->pageTypes = array_filter($this->pageTypes, function ($pageType) use ($offset) {
+                return $pageType !== $offset;
             });
         } else {
             unset($this->pageTypes[$offset]);
@@ -122,13 +103,9 @@ class PageTypeCollection implements PageTypeCollectionInterface
     }
 
     /**
-     * (PHP 5 &gt;= 5.1.0)<br/>
      * Count elements of an object
-     * @link http://php.net/manual/en/countable.count.php
+     *
      * @return int The custom count as an integer.
-     * </p>
-     * <p>
-     * The return value is cast to an integer.
      */
     public function count()
     {
