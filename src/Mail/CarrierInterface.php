@@ -1,10 +1,9 @@
 <?php
-namespace DreadLabs\VantomasWebsite;
+namespace DreadLabs\VantomasWebsite\Mail;
 
-use DreadLabs\VantomasWebsite\Mail\ConveyableInterface;
 use DreadLabs\VantomasWebsite\Mail\Exception\FailedRecipientsException;
 
-interface MailInterface
+interface CarrierInterface
 {
 
     /**
