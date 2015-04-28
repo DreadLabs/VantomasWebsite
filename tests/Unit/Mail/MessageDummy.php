@@ -60,5 +60,4 @@ class MessageDummy implements MessageInterface
     {
         // TODO: Implement send() method.
     }
-
 }

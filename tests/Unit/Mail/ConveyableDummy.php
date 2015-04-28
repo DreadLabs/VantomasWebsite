@@ -15,5 +15,4 @@ class ConveyableDummy implements ConveyableInterface
     {
         // TODO: Implement setMailMessageViewData() method.
     }
-
 }

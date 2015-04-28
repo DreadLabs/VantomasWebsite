@@ -16,5 +16,4 @@ class DateRangeTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals($startDate, $sut->getStartDate());
         $this->assertEquals($endDate, $sut->getEndDate());
     }
-
 }

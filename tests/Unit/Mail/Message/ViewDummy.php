@@ -33,5 +33,4 @@ class ViewDummy implements ViewInterface
     {
         // TODO: Implement render() method.
     }
-
 }

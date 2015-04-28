@@ -8,17 +8,17 @@ interface ConfigurationInterface
 {
 
     /**
-     * @return PageIdCollectionInterface
-     */
-    public function getPageIds();
-
-    /**
      * @return PageTypeCollectionInterface
      */
     public function getPageTypes();
 
     /**
-     * @return array
+     * @return string
      */
-    public function getOrdering();
+    public function getOrderBy();
+
+    /**
+     * @return string
+     */
+    public function getOrderDirection();
 }
