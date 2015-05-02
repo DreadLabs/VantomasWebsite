@@ -46,4 +46,47 @@ class ConcreteResourceTest extends \PHPUnit_Framework_TestCase
         $this->assertContains('foo=an', $path);
         $this->assertContains('foo=array', $path);
     }
+
+    public function testApiKeySetterIsCalledAndResolvedToUnderscoredParameter()
+    {
+        $resource = $this->getMock(DummyConcreteResource::class, null);
+
+        $parameters = array(
+            'apiKey' => 'lorem-ipsum',
+        );
+
+        $path = $resource->getPath($parameters);
+
+        $this->assertContains('api_key=lorem-ipsum', $path);
+    }
+
+    public function testNullValuesAreSkipped()
+    {
+        $resource = $this->getMock(DummyConcreteResource::class, null);
+
+        $parameters = array(
+            'foo' => null,
+            'bar' => 'hello-world',
+        );
+
+        $path = $resource->getPath($parameters);
+
+        $this->assertContains('bar=hello-world', $path);
+        $this->assertNotContains('foo', $path);
+    }
+
+    public function testNonScalarOrNonArrayValuesWillBeLeftEmpty()
+    {
+        $resource = $this->getMock(DummyConcreteResource::class, null);
+
+        $parameters = array(
+            'foo' => 'lorem-ipsum',
+            'bar' => new \stdClass(),
+        );
+
+        $path = $resource->getPath($parameters);
+
+        $this->assertContains('foo=lorem-ipsum', $path);
+        $this->assertRegExp('/.*?bar=(&|\?)?.*?$/', $path);
+    }
 }

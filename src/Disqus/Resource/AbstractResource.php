@@ -69,7 +69,7 @@ abstract class AbstractResource
         try {
             $pathPart = $this->getPathParameter($parameterName, $parameterValue);
         } catch (\Exception $e) {
-            $pathPart = '';
+            $pathPart = $parameterName . '=';
         }
 
         return $pathPart;
