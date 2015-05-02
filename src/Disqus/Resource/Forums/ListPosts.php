@@ -51,7 +51,7 @@ class ListPosts extends AbstractResource
      */
     public function setForum($forum)
     {
-        $this->forum = $forum;
+        $this->forum = (string) $forum;
     }
 
     /**
@@ -119,6 +119,6 @@ class ListPosts extends AbstractResource
      */
     public function setOrder($order)
     {
-        $this->order = $order;
+        $this->order = (string) $order;
     }
 }
