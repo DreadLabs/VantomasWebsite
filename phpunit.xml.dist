@@ -32,6 +32,7 @@
             <exclude>
                 <directory>./vendor</directory>
                 <directory>./tests</directory>
+                <directory suffix="Interface.php">./src/</directory>
             </exclude>
         </whitelist>
     </filter>
