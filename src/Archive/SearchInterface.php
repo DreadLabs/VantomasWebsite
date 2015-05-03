@@ -1,7 +1,6 @@
 <?php
 namespace DreadLabs\VantomasWebsite\Archive;
 
-use DreadLabs\VantomasWebsite\Page\Page;
 use DreadLabs\VantomasWebsite\Page\PageType;
 
 interface SearchInterface extends \IteratorAggregate, \Countable
@@ -18,17 +17,6 @@ interface SearchInterface extends \IteratorAggregate, \Countable
      * @return void
      */
     public function setPageType(PageType $pageType);
-
-    /**
-     * @param Page[] $result
-     * @return void
-     */
-    public function setResult(array $result);
-
-    /**
-     * @return array
-     */
-    public function getCurrentPage();
 
     /**
      * @return array
