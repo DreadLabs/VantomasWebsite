@@ -1,9 +1,7 @@
 <?php
 namespace DreadLabs\VantomasWebsite\Taxonomy;
 
-use DreadLabs\VantomasWebsite\Page\Page;
-
-interface TagSearchInterface extends \IteratorAggregate, \Countable
+interface TagSearchInterface
 {
 
     /**
@@ -11,16 +9,6 @@ interface TagSearchInterface extends \IteratorAggregate, \Countable
      * @return void
      */
     public function setTag(Tag $tag);
-
-    /**
-     * @param Page[] $result
-     */
-    public function setResult(array $result);
-
-    /**
-     * @return Page
-     */
-    public function getCurrentPage();
 
     /**
      * @return string
