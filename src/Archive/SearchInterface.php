@@ -3,7 +3,7 @@ namespace DreadLabs\VantomasWebsite\Archive;
 
 use DreadLabs\VantomasWebsite\Page\PageType;
 
-interface SearchInterface extends \IteratorAggregate, \Countable
+interface SearchInterface
 {
 
     /**
