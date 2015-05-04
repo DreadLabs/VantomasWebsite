@@ -1,7 +1,6 @@
 <?php
 namespace DreadLabs\VantomasWebsite\Disqus;
 
-
 interface ConfigurationInterface
 {
 
