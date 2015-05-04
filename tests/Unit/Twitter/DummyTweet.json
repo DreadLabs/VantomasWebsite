@@ -1,0 +1,22 @@
+{
+  "entities": {
+    "urls": [
+      {
+        "url": "http://www.example.org/"
+      },
+      {
+        "url": "http://www.twitter.com/"
+      }
+    ],
+    "hashtags": [
+      {
+        "text": "foo"
+      },
+      {
+        "text": "bar"
+      }
+    ]
+  },
+  "dummyTweetWithUrls": "This is a tweet with links to http://www.example.org/ and http://www.twitter.com/",
+  "dummyTweetWithHashtags": "This is a tweet with hashtags #foo and #bar"
+}
