@@ -8,29 +8,23 @@ interface CanvasInterface
 {
 
     /**
+     * Initializes the canvas
+     *
      * @return void
      */
     public function initialize();
 
     /**
+     * Adds a layer to the canvas
+     *
      * @param LayerInterface $layer
      * @return void
      */
     public function addLayer(LayerInterface $layer);
 
     /**
-     * @param string $alternativeText
-     * @return void
-     */
-    public function setAlternativeText($alternativeText);
-
-    /**
-     * @param string $title
-     * @return void
-     */
-    public function setTitle($title);
-
-    /**
+     * Returns the rendered image resource
+     *
      * @return string
      */
     public function render();
