@@ -36,8 +36,20 @@ class PairRepositoryDummy implements RepositoryInterface
      * @param PairInterface $pair
      * @return void
      */
-    public function add(PairInterface $pair)
+    public function attach(PairInterface $pair)
     {
         // TODO: Implement add() method.
+    }
+
+    /**
+     * Flags if the incoming donor / donee pair is already existing
+     *
+     * @param DonorInterface $donor
+     * @param DoneeInterface $donee
+     * @return bool
+     */
+    public function isPairExisting(DonorInterface $donor, DoneeInterface $donee)
+    {
+        // TODO: Implement isPairExisting() method.
     }
 }
