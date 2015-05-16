@@ -25,6 +25,15 @@ interface RepositoryInterface
     public function isPairMutually(DonorInterface $donor, DoneeInterface $donee);
 
     /**
+     * Flags if the incoming donor / donee pair is already existing
+     *
+     * @param DonorInterface $donor
+     * @param DoneeInterface $donee
+     * @return bool
+     */
+    public function isPairExisting(DonorInterface $donor, DoneeInterface $donee);
+
+    /**
      * @param PairInterface $pair
      * @return void
      */
