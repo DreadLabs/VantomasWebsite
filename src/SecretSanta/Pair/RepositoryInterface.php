@@ -37,5 +37,5 @@ interface RepositoryInterface
      * @param PairInterface $pair
      * @return void
      */
-    public function add(PairInterface $pair);
+    public function attach(PairInterface $pair);
 }
