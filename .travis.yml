@@ -12,6 +12,7 @@ before_script:
   - composer self-update
   - composer install --prefer-source --no-interaction
   - composer -o dump-autoload
+  - mkdir -p ./build/
 
 script:
   - find . -path "./src/*.php" -exec php -l {} \;
