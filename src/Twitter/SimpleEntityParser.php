@@ -25,14 +25,27 @@ class SimpleEntityParser implements EntityParserInterface
     public function parseUrls($tweet)
     {
         foreach ($this->entities->urls as $url) {
-            $tweet = str_replace(
+            $tweet = $this->replaceEntityInTweet(
+                $tweet,
                 $url->url,
-                '<a href="' . $url->url . '">' . $url->url . '</a>',
-                $tweet
+                '<a href="' . $url->url . '">' . $url->url . '</a>'
             );
         }
 
         return $tweet;
+    }
+
+    /**
+     * Replaces an entity in a tweet
+     *
+     * @param string $tweet
+     * @param string $entity
+     * @param string $replacement
+     * @return string
+     */
+    private function replaceEntityInTweet($tweet, $entity, $replacement)
+    {
+        return str_replace($entity, $replacement, $tweet);
     }
 
     /**
@@ -42,10 +55,10 @@ class SimpleEntityParser implements EntityParserInterface
     public function parseHashTags($tweet)
     {
         foreach ($this->entities->hashtags as $hashTag) {
-            $tweet = str_replace(
+            $tweet = $this->replaceEntityInTweet(
+                $tweet,
                 '#' . $hashTag->text,
-                '<a href="https://twitter.com/search?q=%23' . $hashTag->text . '&src=hash">#' . $hashTag->text . '</a>',
-                $tweet
+                '<a href="https://twitter.com/search?q=%23' . $hashTag->text . '&src=hash">#' . $hashTag->text . '</a>'
             );
         }
 
