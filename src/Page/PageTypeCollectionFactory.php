@@ -5,7 +5,7 @@ class PageTypeCollectionFactory implements PageTypeCollectionFactoryInterface
 {
 
     /**
-     * @var PageTypeCollection
+     * @var PageTypeCollectionInterface
      */
     private $collection;
 

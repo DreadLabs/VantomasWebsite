@@ -70,6 +70,6 @@ class Api implements ApiInterface
             ->disconnect()
             ->getResponse();
 
-        return $response->getContent();
+        return $response;
     }
 }

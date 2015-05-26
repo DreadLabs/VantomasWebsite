@@ -20,7 +20,6 @@ class Offset
     /**
      * @param int $xAxis
      * @param int $yAxis
-     * @return self
      */
     public function __construct($xAxis, $yAxis)
     {

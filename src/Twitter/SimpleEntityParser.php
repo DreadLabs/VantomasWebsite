@@ -5,7 +5,7 @@ class SimpleEntityParser implements EntityParserInterface
 {
 
     /**
-     * @var array
+     * @var \stdClass
      */
     private $entities;
 
@@ -25,7 +25,11 @@ class SimpleEntityParser implements EntityParserInterface
     public function parseUrls($tweet)
     {
         foreach ($this->entities->urls as $url) {
-            $tweet = str_replace($url->url, '<a href="' . $url->url . '">' . $url->url . '</a>', $tweet);
+            $tweet = str_replace(
+                $url->url,
+                '<a href="' . $url->url . '">' . $url->url . '</a>',
+                $tweet
+            );
         }
 
         return $tweet;

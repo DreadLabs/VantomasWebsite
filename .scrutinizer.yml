@@ -1,0 +1,40 @@
+build:
+    environment:
+        php: '5.5.14'
+
+filter:
+    excluded_paths:
+        - 'tests/*'
+
+checks:
+    php: true
+
+coding_style:
+    indentation:
+        general:
+            size: 1
+    spaces:
+        general:
+            linefeed_character: newline
+    braces:
+        classes_functions:
+            class: undefined
+            function: undefined
+            closure: undefined
+        if:
+            opening: undefined
+        for:
+            opening: undefined
+        while:
+            opening: undefined
+        do_while:
+            opening: undefined
+        switch:
+            opening: undefined
+        try:
+            opening: undefined
+    upper_lower_casing:
+        keywords:
+            general: undefined
+        constants:
+            true_false_null: undefined

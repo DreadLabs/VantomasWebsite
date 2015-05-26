@@ -33,7 +33,7 @@ interface ApiInterface
      * This method must set the API key.
      *
      * @param array $parameters Resource parameters
-     * @return ApiInterface
+     * @return ResponseInterface
      */
     public function with(array $parameters);
 }

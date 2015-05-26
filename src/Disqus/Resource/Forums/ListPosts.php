@@ -90,7 +90,7 @@ class ListPosts extends AbstractResource
     public function setLimit($limit)
     {
         if (is_numeric($limit)) {
-            $this->limit = $limit;
+            $this->limit = (int) $limit;
         }
     }
 

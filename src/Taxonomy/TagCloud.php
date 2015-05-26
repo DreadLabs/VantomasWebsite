@@ -143,13 +143,19 @@ class TagCloud implements TagCloudInterface
      */
     public function toArray()
     {
-        $tags = array();
+        $tagCollection = array();
 
         $this->tagCloud->addTags($this->tags);
-        $_tags = $this->tagCloud->render('array');
-        foreach ($_tags as $tagAttributes) {
-            $tags[] = Tag::fromString($tagAttributes['tag']);
+        $tags = $this->tagCloud->render('array');
+
+        foreach ($tags as $tagAttributes) {
+            if (!isset($tagAttributes['tag'])) {
+                continue;
+            }
+
+            $tagCollection[] = Tag::fromString($tagAttributes['tag']);
         }
-        return $tags;
+
+        return $tagCollection;
     }
 }

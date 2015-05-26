@@ -25,9 +25,6 @@ class Contact implements ConveyableInterface
      */
     protected $creationDate;
 
-    /**
-     * @return self
-     */
     public function __construct()
     {
         $this->creationDate = new \DateTime();
