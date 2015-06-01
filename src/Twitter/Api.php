@@ -102,13 +102,13 @@ class Api implements ApiInterface
 
         $this->client->setUserAgent($this->configuration->getUserAgent());
         $this->client->setHeader('Authorization', 'Bearer ' . $this->authentication->toString());
-        $this->client->get($this->buildUrl($url, $parameters));
+        $response = $this->client->get($this->buildUrl($url, $parameters));
 
-        if ($this->client->getStatus() !== 200) {
-            throw new \Exception('Communication error: ' . $this->client->getBody());
+        if ($response->getStatusCode() !== 200) {
+            throw new \Exception('Communication error: ' . $response->getBody());
         }
 
-        return json_decode($this->client->getBody());
+        return json_decode($response->getBody());
     }
 
     /**

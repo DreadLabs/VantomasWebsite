@@ -13,4 +13,20 @@ class DummyResponse implements ResponseInterface
     {
         return file_get_contents(__DIR__ . '/DummyToken.json');
     }
+
+    /**
+     * @return int
+     */
+    public function getStatusCode()
+    {
+        return 200;
+    }
+
+    /**
+     * @return array
+     */
+    public function getHeaders()
+    {
+        // TODO: Implement getHeaders() method.
+    }
 }

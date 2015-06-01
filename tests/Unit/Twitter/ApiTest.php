@@ -2,6 +2,7 @@
 namespace DreadLabs\VantomasWebsite\Tests\Unit\Twitter;
 
 use DreadLabs\VantomasWebsite\Http\ClientInterface;
+use DreadLabs\VantomasWebsite\Http\ResponseInterface;
 use DreadLabs\VantomasWebsite\Tests\Unit\Http\DummyClient;
 use DreadLabs\VantomasWebsite\Tests\Unit\Twitter\AccessControl\DummyAuthentication;
 use DreadLabs\VantomasWebsite\Tests\Unit\Twitter\AccessControl\DummyAuthorization;
@@ -59,6 +60,14 @@ class ApiTest extends \PHPUnit_Framework_TestCase
     {
         $this->setExpectedException(Exception::class);
 
+        $responseMock = $this->getMockBuilder(ResponseInterface::class)->getMock();
+        $responseMock->expects($this->once())->method('getStatusCode')->will($this->returnValue(403));
+
+        $this->clientMock
+            ->expects($this->once())
+            ->method('get')
+            ->will($this->returnValue($responseMock));
+
         $this->sut->getSearchResult();
     }
 
@@ -69,10 +78,16 @@ class ApiTest extends \PHPUnit_Framework_TestCase
             ->method('isAuthenticated')
             ->will($this->returnValue(false));
 
+        $responseMock = $this->getMock(ResponseInterface::class);
+        $responseMock
+            ->expects($this->once())
+            ->method('getStatusCode')
+            ->will($this->returnValue(200));
+
         $this->clientMock
             ->expects($this->once())
-            ->method('getStatus')
-            ->will($this->returnValue(200));
+            ->method('get')
+            ->will($this->returnValue($responseMock));
 
         $this->sut->getTimeline();
     }
@@ -84,10 +99,16 @@ class ApiTest extends \PHPUnit_Framework_TestCase
             ->method('isAuthenticated')
             ->will($this->returnValue(true));
 
+        $responseMock = $this->getMockBuilder(ResponseInterface::class)->getMock();
+        $responseMock
+            ->expects($this->once())
+            ->method('getStatusCode')
+            ->will($this->returnValue(200));
+
         $this->clientMock
             ->expects($this->once())
-            ->method('getStatus')
-            ->will($this->returnValue(200));
+            ->method('get')
+            ->will($this->returnValue($responseMock));
 
         $this->clientMock
             ->expects($this->once())

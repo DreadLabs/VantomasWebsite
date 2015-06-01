@@ -122,17 +122,16 @@ class BearerToken implements AuthorizationInterface
 
     private function fetchTokenFromRemote()
     {
-        $this->client->post(
+        $response = $this->client->post(
             $this->configuration->getBearerTokenUrl(),
             array('grant_type' => 'client_credentials')
         );
 
-        if ($this->client->getStatus() !== 200) {
-            throw new AuthorizationFailedException('Cannot retrieve bearer: ' . $this->client->getBody());
+        if ($response->getStatusCode() !== 200) {
+            throw new AuthorizationFailedException('Cannot retrieve bearer: ' . $response->getBody());
         }
 
-        $responseBody = $this->client->getResponse()->getBody();
-        $this->token = json_decode($responseBody);
+        $this->token = json_decode($response->getBody());
     }
 
     private function checkTokenType()

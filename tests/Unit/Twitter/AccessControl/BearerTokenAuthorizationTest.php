@@ -2,6 +2,7 @@
 namespace DreadLabs\VantomasWebsite\Tests\Unit\Twitter\AccessControl;
 
 use DreadLabs\VantomasWebsite\Http\ClientInterface;
+use DreadLabs\VantomasWebsite\Http\ResponseInterface;
 use DreadLabs\VantomasWebsite\Tests\Fixture\Twitter\DummyResponse;
 use DreadLabs\VantomasWebsite\Tests\Unit\Http\DummyClient;
 use DreadLabs\VantomasWebsite\Tests\Unit\Twitter\DummyCache;
@@ -188,10 +189,17 @@ class BearerTokenAuthorizationTest extends \PHPUnit_Framework_TestCase
             ->expects($this->once())
             ->method('has')
             ->will($this->returnValue(false));
+
+        $responseMock = $this->getMock(ResponseInterface::class);
+        $responseMock
+            ->expects($this->once())
+            ->method('getStatusCode')
+            ->will($this->returnValue(403));
+
         $this->clientMock
             ->expects($this->once())
-            ->method('getStatus')
-            ->will($this->returnValue(403));
+            ->method('post')
+            ->will($this->returnValue($responseMock));
 
         $this->sut = new BearerToken(
             $this->clientMock,
@@ -209,10 +217,15 @@ class BearerTokenAuthorizationTest extends \PHPUnit_Framework_TestCase
 
     public function testSuccessfulFetchingOfRemoteTokenWillStoreItInTheCache()
     {
+        $responseMock = $this
+            ->getMockBuilder(DummyResponse::class)
+            ->setMethods(null)
+            ->getMock();
+
         $this->clientMock
             ->expects($this->once())
-            ->method('getStatus')
-            ->will($this->returnValue(200));
+            ->method('post')
+            ->will($this->returnValue($responseMock));
 
         $credentialChecksum = md5(base64_encode('consumer-key:consumer-secret'));
 
@@ -247,16 +260,6 @@ class BearerTokenAuthorizationTest extends \PHPUnit_Framework_TestCase
             $this->configurationMock,
             $this->cacheMock
         );
-
-        $responseMock = $this
-            ->getMockBuilder(DummyResponse::class)
-            ->setMethods(null)
-            ->getMock();
-
-        $this->clientMock
-            ->expects($this->once())
-            ->method('getResponse')
-            ->will($this->returnValue($responseMock));
 
         $this->cacheMock
             ->expects($this->once())

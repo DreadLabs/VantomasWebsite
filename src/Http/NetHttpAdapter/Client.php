@@ -44,44 +44,32 @@ class Client implements ClientInterface
 
     /**
      * @param string $url
-     * @return void
+     * @return ResponseInterface
      */
     public function get($url)
     {
         $this->client->get($url);
+
+        return new Response(
+            $this->client->getStatus(),
+            $this->client->getHeaders(),
+            $this->client->getBody()
+        );
     }
 
     /**
      * @param string $uri
      * @param mixed $query
-     * @return void
+     * @return ResponseInterface
      */
     public function post($uri, $query)
     {
         $this->client->post($uri, $query);
-    }
 
-    /**
-     * @return int
-     */
-    public function getStatus()
-    {
-        return $this->client->getStatus();
-    }
-
-    /**
-     * @return string
-     */
-    public function getBody()
-    {
-        return $this->client->getBody();
-    }
-
-    /**
-     * @return ResponseInterface
-     */
-    public function getResponse()
-    {
-        return new Response($this->client->getStatus(), $this->client->getHeaders(), $this->client->getBody());
+        return new Response(
+            $this->client->getStatus(),
+            $this->client->getHeaders(),
+            $this->client->getBody()
+        );
     }
 }

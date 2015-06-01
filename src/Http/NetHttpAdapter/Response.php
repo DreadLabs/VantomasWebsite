@@ -15,13 +15,21 @@ class Response implements ResponseInterface
     private $response;
 
     /**
-     * @param $status
-     * @param $headers
+     * @param int $status
+     * @param array $headers
      * @param string $body
      */
-    public function __construct($status, $headers, $body = '')
+    public function __construct($status, array $headers, $body = '')
     {
-        $this->response = new \Net_Http_Response($status, $headers, $body);
+        $this->response = new \Net_Http_Response((int) $status, $headers, $body);
+    }
+
+    /**
+     * @return int
+     */
+    public function getStatusCode()
+    {
+        return $this->response->getStatus();
     }
 
     /**
@@ -30,5 +38,13 @@ class Response implements ResponseInterface
     public function getBody()
     {
         return $this->response->getBody();
+    }
+
+    /**
+     * @return array
+     */
+    public function getHeaders()
+    {
+        return $this->response->getHeaders();
     }
 }

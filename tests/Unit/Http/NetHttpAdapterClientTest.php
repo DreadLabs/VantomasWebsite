@@ -44,13 +44,24 @@ class NetHttpAdapterClientTest extends \PHPUnit_Framework_TestCase
     {
         $this->netHttpClient
             ->expects($this->once())
+            ->method('getHeaders')
+            ->will($this->returnValue(array('Content-Type' => 'foo/bar')));
+
+        $this->netHttpClient
+            ->expects($this->once())
             ->method('get')
             ->with($this->equalTo('http://example.org/foo.json'));
+
         $this->sut->get('http://example.org/foo.json');
     }
 
     public function testHttpPostIsProxied()
     {
+        $this->netHttpClient
+            ->expects($this->once())
+            ->method('getHeaders')
+            ->will($this->returnValue(array('Content-Type' => 'foo/bar')));
+
         $this->netHttpClient
             ->expects($this->once())
             ->method('post')
@@ -64,27 +75,5 @@ class NetHttpAdapterClientTest extends \PHPUnit_Framework_TestCase
                 )
             );
         $this->sut->post('http://example.org/bar.json', array('field1' => 'value1', 'field2' => 'value2'));
-    }
-
-    public function testQueryingStatusIsProxied()
-    {
-        $this->netHttpClient
-            ->expects($this->once())
-            ->method('getStatus');
-        $this->sut->getStatus();
-    }
-
-    public function testQueryingBodyIsProxied()
-    {
-        $this->netHttpClient
-            ->expects($this->once())
-            ->method('getBody');
-        $this->sut->getBody();
-    }
-
-    public function testQueryingResponseObjectReturnsResponseAdapter()
-    {
-        $response = $this->sut->getResponse();
-        $this->assertInstanceOf('DreadLabs\\VantomasWebsite\\Http\\ResponseInterface', $response);
     }
 }

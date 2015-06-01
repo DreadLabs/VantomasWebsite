@@ -22,29 +22,14 @@ interface ClientInterface
 
     /**
      * @param string $url
-     * @return void
+     * @return ResponseInterface
      */
     public function get($url);
 
     /**
      * @param string $uri
      * @param mixed $query
-     * @return void
-     */
-    public function post($uri, $query);
-
-    /**
-     * @return int
-     */
-    public function getStatus();
-
-    /**
-     * @return string
-     */
-    public function getBody();
-
-    /**
      * @return ResponseInterface
      */
-    public function getResponse();
+    public function post($uri, $query);
 }
