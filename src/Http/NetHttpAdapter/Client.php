@@ -50,6 +50,14 @@ class Client implements ClientInterface
     {
         $this->client->get($url);
 
+        return $this->createResponse();
+    }
+
+    /**
+     * @return ResponseInterface
+     */
+    private function createResponse()
+    {
         return new Response(
             $this->client->getStatus(),
             $this->client->getHeaders(),
@@ -66,10 +74,6 @@ class Client implements ClientInterface
     {
         $this->client->post($uri, $query);
 
-        return new Response(
-            $this->client->getStatus(),
-            $this->client->getHeaders(),
-            $this->client->getBody()
-        );
+        return $this->createResponse();
     }
 }
