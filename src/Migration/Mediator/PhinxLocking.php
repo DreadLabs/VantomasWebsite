@@ -64,23 +64,30 @@ class PhinxLocking implements MediatorInterface
      */
     public function negotiate()
     {
+        // This is a workaround for PHP5.5, @see https://github.com/sebastianbergmann/phpunit-mock-objects/issues/143#issuecomment-108148498
+        $catchedException = null;
+
         try {
             $this->mutex->acquireLock(1000);
             $this->executeMigrations();
         } catch (LockingException $exc) {
             $this->logger->emergency($exc->getMessage());
 
-            throw $exc;
+            $catchedException = $exc;
         } catch (InvalidDirectionException $exc) {
             $this->logger->emergency('The version to migrate to is older than the current one.');
 
-            throw $exc;
+            $catchedException = $exc;
         } catch (MigrationException $exc) {
             $this->logger->emergency('Migration of version ' . $exc->getCode() . ' failed.', array($exc->getMessage()));
 
-            throw $exc;
-        } finally {
-            $this->mutex->releaseLock();
+            $catchedException = $exc;
+        }
+
+        $this->mutex->releaseLock();
+
+        if (!is_null($catchedException)) {
+            throw $catchedException;
         }
     }
 
