@@ -1,18 +1,30 @@
 <?php
+
+/*
+ * This file is part of the VantomasWebsite package.
+ *
+ * (c) Thomas Juhnke <dev@van-tomas.de>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace DreadLabs\VantomasWebsite\Tests\Unit\Mail;
 
 use DreadLabs\VantomasWebsite\Mail\LoggerInterface;
 
+/**
+ * LoggerDummy
+ *
+ * @author Thomas Juhnke <dev@van-tomas.de>
+ */
 class LoggerDummy implements LoggerInterface
 {
 
     /**
-     * @param string $message
-     * @param array $context
-     * @return void
+     * {@inheritdoc}
      */
     public function alert($message, array $context = array())
     {
-        // TODO: Implement alert() method.
     }
 }

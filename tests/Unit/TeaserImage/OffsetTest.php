@@ -1,8 +1,23 @@
 <?php
+
+/*
+ * This file is part of the VantomasWebsite package.
+ *
+ * (c) Thomas Juhnke <dev@van-tomas.de>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace DreadLabs\VantomasWebsite\Tests\Unit\TeaserImage;
 
 use DreadLabs\VantomasWebsite\TeaserImage\Offset;
 
+/**
+ * OffsetTest
+ *
+ * @author Thomas Juhnke <dev@van-tomas.de>
+ */
 class OffsetTest extends \PHPUnit_Framework_TestCase
 {
 

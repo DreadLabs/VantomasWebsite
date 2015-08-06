@@ -1,9 +1,27 @@
 <?php
+
+/*
+ * This file is part of the VantomasWebsite package.
+ *
+ * (c) Thomas Juhnke <dev@van-tomas.de>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace DreadLabs\VantomasWebsite\Disqus;
 
 use DreadLabs\VantomasWebsite\Disqus\Resource\AbstractResource;
 use DreadLabs\VantomasWebsite\Disqus\Resource\ResolverInterface;
 
+/**
+ * Resource URL generator
+ *
+ * Uses the resource resolver in order to create a proper
+ * URL, ready to request from the Disqus API.
+ *
+ * @author Thomas Juhnke <dev@van-tomas.de>
+ */
 class Resource implements ResourceInterface
 {
 
@@ -13,13 +31,11 @@ class Resource implements ResourceInterface
     private $resourceResolver;
 
     /**
-     *
      * @var string
      */
     protected $baseUrl = '';
 
     /**
-     *
      * @var string
      */
     protected $signature;
@@ -39,19 +55,16 @@ class Resource implements ResourceInterface
     protected $action = '';
 
     /**
-     *
      * @var string
      */
     protected $format = '';
 
     /**
-     *
      * @var AbstractResource
      */
     protected $concreteResource;
 
     /**
-     *
      * @var array
      */
     protected $parameters = array();

@@ -1,4 +1,14 @@
 <?php
+
+/*
+ * This file is part of the VantomasWebsite package.
+ *
+ * (c) Thomas Juhnke <dev@van-tomas.de>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace DreadLabs\VantomasWebsite\Twitter;
 
 use DreadLabs\VantomasWebsite\Twitter\AccessControl\AuthenticationInterface;
@@ -7,6 +17,8 @@ use DreadLabs\VantomasWebsite\Http\ClientInterface;
 
 /**
  * Simple Twitter API service.
+ *
+ * @author Thomas Juhnke <dev@van-tomas.de>
  */
 class Api implements ApiInterface
 {
@@ -59,6 +71,7 @@ class Api implements ApiInterface
     /**
      * @param string $key
      * @param string|int $value
+     *
      * @return void
      */
     public function addParameter($key, $value)
@@ -68,6 +81,7 @@ class Api implements ApiInterface
 
     /**
      * @return array
+     *
      * @throws \Exception
      */
     public function getTimeline()
@@ -91,7 +105,9 @@ class Api implements ApiInterface
      *
      * @param string $url the endpoint
      * @param array $parameters additional parameters
+     *
      * @return array
+     *
      * @throws \Exception
      */
     private function get($url, array $parameters = array())
@@ -115,6 +131,7 @@ class Api implements ApiInterface
      *
      * @param string $url
      * @param array $parameters
+     *
      * @return string
      */
     private function buildUrl($url, array $parameters = array())

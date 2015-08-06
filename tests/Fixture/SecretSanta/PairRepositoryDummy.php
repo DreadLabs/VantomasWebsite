@@ -1,4 +1,14 @@
 <?php
+
+/*
+ * This file is part of the VantomasWebsite package.
+ *
+ * (c) Thomas Juhnke <dev@van-tomas.de>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace DreadLabs\VantomasWebsite\Tests\Fixture\SecretSanta;
 
 use DreadLabs\VantomasWebsite\SecretSanta\Donee\DoneeInterface;
@@ -6,50 +16,39 @@ use DreadLabs\VantomasWebsite\SecretSanta\Donor\DonorInterface;
 use DreadLabs\VantomasWebsite\SecretSanta\Pair\PairInterface;
 use DreadLabs\VantomasWebsite\SecretSanta\Pair\RepositoryInterface;
 
+/**
+ * PairRepositoryDummy
+ *
+ * @author Thomas Juhnke <dev@van-tomas.de>
+ */
 class PairRepositoryDummy implements RepositoryInterface
 {
 
     /**
-     * Finds a pair for the given donor
-     *
-     * @param DonorInterface $donor
-     * @return PairInterface
+     * {@inheritdoc}
      */
     public function findPairFor(DonorInterface $donor)
     {
-        // TODO: Implement findPairFor() method.
     }
 
     /**
-     * Determines if the given donor/donee pair is mutual
-     *
-     * @param DonorInterface $donor
-     * @param DoneeInterface $donee
-     * @return bool
+     * {@inheritdoc}
      */
     public function isPairMutually(DonorInterface $donor, DoneeInterface $donee)
     {
-        // TODO: Implement isPairMutually() method.
     }
 
     /**
-     * @param PairInterface $pair
-     * @return void
+     * {@inheritdoc}
      */
     public function attach(PairInterface $pair)
     {
-        // TODO: Implement add() method.
     }
 
     /**
-     * Flags if the incoming donor / donee pair is already existing
-     *
-     * @param DonorInterface $donor
-     * @param DoneeInterface $donee
-     * @return bool
+     * {@inheritdoc}
      */
     public function isPairExisting(DonorInterface $donor, DoneeInterface $donee)
     {
-        // TODO: Implement isPairExisting() method.
     }
 }

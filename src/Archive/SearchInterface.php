@@ -1,19 +1,36 @@
 <?php
+
+/*
+ * This file is part of the VantomasWebsite package.
+ *
+ * (c) Thomas Juhnke <dev@van-tomas.de>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace DreadLabs\VantomasWebsite\Archive;
 
 use DreadLabs\VantomasWebsite\Page\PageType;
 
+/**
+ * Interface for building a archive search criteria
+ *
+ * @author Thomas Juhnke <dev@van-tomas.de>
+ */
 interface SearchInterface
 {
 
     /**
      * @param DateRange $dateRange
+     *
      * @return void
      */
     public function setDateRange(DateRange $dateRange);
 
     /**
      * @param PageType $pageType
+     *
      * @return void
      */
     public function setPageType(PageType $pageType);

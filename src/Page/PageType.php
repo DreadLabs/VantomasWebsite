@@ -1,6 +1,21 @@
 <?php
+
+/*
+ * This file is part of the VantomasWebsite package.
+ *
+ * (c) Thomas Juhnke <dev@van-tomas.de>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace DreadLabs\VantomasWebsite\Page;
 
+/**
+ * PageType
+ *
+ * @author Thomas Juhnke <dev@van-tomas.de>
+ */
 class PageType
 {
 
@@ -24,6 +39,7 @@ class PageType
 
     /**
      * @param string $pageType
+     *
      * @return self
      */
     public static function fromString($pageType)

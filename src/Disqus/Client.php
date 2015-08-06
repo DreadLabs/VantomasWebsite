@@ -1,9 +1,26 @@
 <?php
+
+/*
+ * This file is part of the VantomasWebsite package.
+ *
+ * (c) Thomas Juhnke <dev@van-tomas.de>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace DreadLabs\VantomasWebsite\Disqus;
 
 use DreadLabs\VantomasWebsite\Disqus\Client\AbstractClient;
 use DreadLabs\VantomasWebsite\Disqus\Client\ResolverInterface;
 
+/**
+ * Client entry point
+ *
+ * Uses the resolver to find a proper client implementation.
+ *
+ * @author Thomas Juhnke <dev@van-tomas.de>
+ */
 class Client implements ClientInterface
 {
 
@@ -15,19 +32,16 @@ class Client implements ClientInterface
     protected $clientName = 'Curl';
 
     /**
-     *
      * @var ResolverInterface
      */
     protected $clientResolver;
 
     /**
-     *
      * @var AbstractClient
      */
     protected $concreteClient;
 
     /**
-     *
      * @var ResponseInterface
      */
     protected $response;

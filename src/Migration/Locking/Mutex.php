@@ -1,4 +1,14 @@
 <?php
+
+/*
+ * This file is part of the VantomasWebsite package.
+ *
+ * (c) Thomas Juhnke <dev@van-tomas.de>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace DreadLabs\VantomasWebsite\Migration\Locking;
 
 use DreadLabs\VantomasWebsite\Migration\Exception\LockingException;
@@ -13,6 +23,8 @@ use NinjaMutex\Lock\LockInterface;
  * Basically, this swaps the constructor arguments to play
  * nicely with frameworks which doesn't allow scalar value
  * injection into services.
+ *
+ * @author Thomas Juhnke <dev@van-tomas.de>
  */
 class Mutex implements MutexInterface
 {

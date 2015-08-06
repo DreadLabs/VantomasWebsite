@@ -1,6 +1,26 @@
 <?php
+
+/*
+ * This file is part of the VantomasWebsite package.
+ *
+ * (c) Thomas Juhnke <dev@van-tomas.de>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace DreadLabs\VantomasWebsite\Archive;
 
+/**
+ * Date range value object for the archive
+ *
+ * Provides creation of a date range from a month + year. This
+ * resolves to the first day within the given month as the
+ * start date and the last day within the given month as the
+ * end date.
+ *
+ * @author Thomas Juhnke <dev@van-tomas.de>
+ */
 class DateRange
 {
 
@@ -19,8 +39,8 @@ class DateRange
     /**
      * Constructs the archive search DateRange
      *
-     * @param integer $month
-     * @param integer $year
+     * @param int $month
+     * @param int $year
      */
     public function __construct($month, $year)
     {
@@ -57,6 +77,7 @@ class DateRange
     /**
      * @param int $month
      * @param int $year
+     *
      * @return self
      */
     public static function fromMonthAndYear($month, $year)

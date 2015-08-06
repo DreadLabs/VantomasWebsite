@@ -1,4 +1,14 @@
 <?php
+
+/*
+ * This file is part of the VantomasWebsite package.
+ *
+ * (c) Thomas Juhnke <dev@van-tomas.de>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace DreadLabs\VantomasWebsite\Twitter\AccessControl\Authorization;
 
 use DreadLabs\VantomasWebsite\Twitter\AccessControl\AuthenticationInterface;
@@ -9,6 +19,11 @@ use DreadLabs\VantomasWebsite\Twitter\CacheInterface;
 use DreadLabs\VantomasWebsite\Twitter\ConfigurationInterface;
 use DreadLabs\VantomasWebsite\Http\ClientInterface;
 
+/**
+ * BearerToken
+ *
+ * @author Thomas Juhnke <dev@van-tomas.de>
+ */
 class BearerToken implements AuthorizationInterface
 {
 
@@ -65,6 +80,7 @@ class BearerToken implements AuthorizationInterface
      * Initializes the bearer token credentials in the expected format
      *
      * @see https://dev.twitter.com/docs/auth/application-only-auth
+     *
      * @return void
      */
     private function initializeCredentials()
@@ -80,7 +96,9 @@ class BearerToken implements AuthorizationInterface
 
     /**
      * @param AuthenticationInterface $authentication
+     *
      * @return void
+     *
      * @throws AuthorizationFailedException
      * @throws InvalidBearerTokenTypeException
      */

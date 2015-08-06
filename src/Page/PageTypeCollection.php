@@ -1,8 +1,23 @@
 <?php
+
+/*
+ * This file is part of the VantomasWebsite package.
+ *
+ * (c) Thomas Juhnke <dev@van-tomas.de>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace DreadLabs\VantomasWebsite\Page;
 
 use Traversable;
 
+/**
+ * PageTypeCollection
+ *
+ * @author Thomas Juhnke <dev@van-tomas.de>
+ */
 class PageTypeCollection implements PageTypeCollectionInterface
 {
 
@@ -25,6 +40,7 @@ class PageTypeCollection implements PageTypeCollectionInterface
      * Whether an offset exists
      *
      * @param mixed $offset An offset to check for.
+     *
      * @return boolean true on success or false on failure.
      */
     public function offsetExists($offset)
@@ -36,6 +52,7 @@ class PageTypeCollection implements PageTypeCollectionInterface
      * Offset to retrieve
      *
      * @param mixed $offset The offset to retrieve.
+     *
      * @return PageType
      */
     public function offsetGet($offset)
@@ -48,6 +65,7 @@ class PageTypeCollection implements PageTypeCollectionInterface
      *
      * @param mixed $offset The offset to assign the value to.
      * @param mixed $value The value to set.
+     *
      * @return void
      */
     public function offsetSet($offset, $value)
@@ -63,6 +81,7 @@ class PageTypeCollection implements PageTypeCollectionInterface
      * Offset to unset
      *
      * @param mixed $offset The offset to unset.
+     *
      * @return void
      */
     public function offsetUnset($offset)
@@ -78,6 +97,7 @@ class PageTypeCollection implements PageTypeCollectionInterface
 
     /**
      * @param PageType $pageType
+     *
      * @return void
      */
     public function add(PageType $pageType)
@@ -87,6 +107,7 @@ class PageTypeCollection implements PageTypeCollectionInterface
 
     /**
      * @param PageType $pageType
+     *
      * @return void
      */
     public function remove(PageType $pageType)

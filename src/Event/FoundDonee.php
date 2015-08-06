@@ -1,4 +1,14 @@
 <?php
+
+/*
+ * This file is part of the VantomasWebsite package.
+ *
+ * (c) Thomas Juhnke <dev@van-tomas.de>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace DreadLabs\VantomasWebsite\Event;
 
 use DreadLabs\VantomasWebsite\SecretSanta\Donee\DoneeInterface;
@@ -10,7 +20,7 @@ use DreadLabs\VantomasWebsite\SecretSanta\Donor\DonorInterface;
  * Event which will be triggered by the SecretSanta donee resolver if
  * a donee was found.
  *
- * @package DreadLabs\VantomasWebsite\Event
+ * @author Thomas Juhnke <dev@van-tomas.de>
  */
 class FoundDonee implements EventInterface
 {
@@ -32,6 +42,7 @@ class FoundDonee implements EventInterface
 
     /**
      * @param mixed $argument
+     *
      * @return void
      */
     public function addArgument($argument)
@@ -55,6 +66,7 @@ class FoundDonee implements EventInterface
      *
      * @param DonorInterface $donor
      * @param DoneeInterface $donee
+     *
      * @return self
      */
     public static function fromPair(DonorInterface $donor, DoneeInterface $donee)

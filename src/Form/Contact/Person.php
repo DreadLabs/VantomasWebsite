@@ -1,23 +1,35 @@
 <?php
+
+/*
+ * This file is part of the VantomasWebsite package.
+ *
+ * (c) Thomas Juhnke <dev@van-tomas.de>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace DreadLabs\VantomasWebsite\Form\Contact;
 
+/**
+ * Contact form person value object
+ *
+ * @author Thomas Juhnke <dev@van-tomas.de>
+ */
 class Person
 {
 
     /**
-     *
      * @var string
      */
     protected $firstName;
 
     /**
-     *
      * @var string
      */
     protected $lastName;
 
     /**
-     *
      * @var string
      */
     protected $email;
@@ -43,6 +55,7 @@ class Person
      * Sets the firstname
      *
      * @param string $firstName
+     *
      * @return void
      */
     public function setFirstName($firstName)
@@ -64,6 +77,7 @@ class Person
      * Sets the last name
      *
      * @param string $lastName
+     *
      * @return void
      */
     public function setLastName($lastName)
@@ -85,6 +99,7 @@ class Person
      * Sets the email
      *
      * @param string $email
+     *
      * @return void
      */
     public function setEmail($email)
@@ -106,6 +121,7 @@ class Person
      * Sets the city
      *
      * @param string $city
+     *
      * @return void
      */
     public function setCity($city)

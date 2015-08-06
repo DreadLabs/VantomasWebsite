@@ -1,63 +1,65 @@
 <?php
+
+/*
+ * This file is part of the VantomasWebsite package.
+ *
+ * (c) Thomas Juhnke <dev@van-tomas.de>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
 namespace DreadLabs\VantomasWebsite\Tests\Unit\Mail;
 
 use DreadLabs\VantomasWebsite\Mail\Exception\FailedRecipientsException;
 use DreadLabs\VantomasWebsite\Mail\MessageInterface;
 
+/**
+ * MessageDummy
+ *
+ * @author Thomas Juhnke <dev@van-tomas.de>
+ */
 class MessageDummy implements MessageInterface
 {
 
     /**
-     * @param array $sender
-     * @return void
+     * {@inheritdoc}
      */
     public function setSender(array $sender)
     {
-        // TODO: Implement setSender() method.
     }
 
     /**
-     * @param $receiver
-     * @return void
+     * {@inheritdoc}
      */
     public function setReceiver(array $receiver)
     {
-        // TODO: Implement setReceiver() method.
     }
 
     /**
-     * @param string $subject
-     * @return void
+     * {@inheritdoc}
      */
     public function setSubject($subject)
     {
-        // TODO: Implement setSubject() method.
     }
 
     /**
-     * @param string $htmlBody
-     * @return void
+     * {@inheritdoc}
      */
     public function setHtmlBody($htmlBody)
     {
-        // TODO: Implement setHtmlBody() method.
     }
 
     /**
-     * @param string $plainBody
-     * @return void
+     * {@inheritdoc}
      */
     public function setPlainBody($plainBody)
     {
-        // TODO: Implement setPlainBody() method.
     }
 
     /**
-     * @return void
-     * @throws FailedRecipientsException
+     * {@inheritdoc}
      */
     public function send()
     {
-        // TODO: Implement send() method.
     }
 }

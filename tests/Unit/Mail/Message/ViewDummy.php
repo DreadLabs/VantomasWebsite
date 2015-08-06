@@ -1,36 +1,45 @@
 <?php
+
+/*
+ * This file is part of the VantomasWebsite package.
+ *
+ * (c) Thomas Juhnke <dev@van-tomas.de>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace DreadLabs\VantomasWebsite\Tests\Unit\Mail\Message;
 
 use DreadLabs\VantomasWebsite\Mail\Message\ViewInterface;
 use DreadLabs\VantomasWebsite\Mail\MessageInterface;
 
+/**
+ * ViewDummy
+ *
+ * @author Thomas Juhnke <dev@van-tomas.de>
+ */
 class ViewDummy implements ViewInterface
 {
 
     /**
-     * @param $template
-     * @return void
+     * {@inheritdoc}
      */
     public function setTemplate($template)
     {
-        // TODO: Implement setTemplate() method.
     }
 
     /**
-     * @param array $variables
-     * @return void
+     * {@inheritdoc}
      */
     public function setVariables(array $variables)
     {
-        // TODO: Implement setVariables() method.
     }
 
     /**
-     * @param MessageInterface $message
-     * @return void
+     * {@inheritdoc}
      */
     public function render(MessageInterface $message)
     {
-        // TODO: Implement render() method.
     }
 }

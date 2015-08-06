@@ -1,4 +1,14 @@
 <?php
+
+/*
+ * This file is part of the VantomasWebsite package.
+ *
+ * (c) Thomas Juhnke <dev@van-tomas.de>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace DreadLabs\VantomasWebsite\Form;
 
 use DreadLabs\VantomasWebsite\Form\Contact\Message;
@@ -6,6 +16,11 @@ use DreadLabs\VantomasWebsite\Form\Contact\Person;
 use DreadLabs\VantomasWebsite\Mail\ConveyableInterface;
 use DreadLabs\VantomasWebsite\Mail\Message\ViewInterface;
 
+/**
+ * Contact form value object
+ *
+ * @author Thomas Juhnke <dev@van-tomas.de>
+ */
 class Contact implements ConveyableInterface
 {
 
@@ -20,7 +35,6 @@ class Contact implements ConveyableInterface
     protected $message;
 
     /**
-     *
      * @var \DateTime
      */
     protected $creationDate;
@@ -32,6 +46,7 @@ class Contact implements ConveyableInterface
 
     /**
      * @param Person $person
+     *
      * @return void
      */
     public function setPerson(Person $person)
@@ -49,6 +64,7 @@ class Contact implements ConveyableInterface
 
     /**
      * @param Message $message
+     *
      * @return void
      */
     public function setMessage(Message $message)
@@ -78,6 +94,7 @@ class Contact implements ConveyableInterface
      * Sets the creation date
      *
      * @param \DateTime $creationDate
+     *
      * @return void
      */
     public function setCreationDate(\DateTime $creationDate = null)
@@ -87,6 +104,7 @@ class Contact implements ConveyableInterface
 
     /**
      * @param ViewInterface $view
+     *
      * @return void
      */
     public function setMailMessageViewData(ViewInterface $view)

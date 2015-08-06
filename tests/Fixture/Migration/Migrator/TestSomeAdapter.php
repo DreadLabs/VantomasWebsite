@@ -1,4 +1,14 @@
 <?php
+
+/*
+ * This file is part of the VantomasWebsite package.
+ *
+ * (c) Thomas Juhnke <dev@van-tomas.de>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace DreadLabs\VantomasWebsite\Tests\Fixture\Migration\Migrator;
 
 use Phinx\Db\Adapter\AdapterInterface;
@@ -9,6 +19,11 @@ use Phinx\Db\Table\Index;
 use Phinx\Migration\MigrationInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
+/**
+ * TestSomeAdapter
+ *
+ * @author Thomas Juhnke <dev@van-tomas.de>
+ */
 class TestSomeAdapter implements AdapterInterface
 {
 
@@ -23,9 +38,7 @@ class TestSomeAdapter implements AdapterInterface
     private $output;
 
     /**
-     * Get all migrated version numbers.
-     *
-     * @return array
+     * {@inheritdoc}
      */
     public function getVersions()
     {
@@ -35,10 +48,7 @@ class TestSomeAdapter implements AdapterInterface
     }
 
     /**
-     * Set adapter configuration options.
-     *
-     * @param  array $options
-     * @return AdapterInterface
+     * {@inheritdoc}
      */
     public function setOptions(array $options)
     {
@@ -46,9 +56,7 @@ class TestSomeAdapter implements AdapterInterface
     }
 
     /**
-     * Get all adapter options.
-     *
-     * @return array
+     * {@inheritdoc}
      */
     public function getOptions()
     {
@@ -56,10 +64,7 @@ class TestSomeAdapter implements AdapterInterface
     }
 
     /**
-     * Check if an option has been set.
-     *
-     * @param  string $name
-     * @return boolean
+     * {@inheritdoc}
      */
     public function hasOption($name)
     {
@@ -67,10 +72,7 @@ class TestSomeAdapter implements AdapterInterface
     }
 
     /**
-     * Get a single adapter option, or null if the option does not exist.
-     *
-     * @param  string $name
-     * @return mixed
+     * {@inheritdoc}
      */
     public function getOption($name)
     {
@@ -78,10 +80,7 @@ class TestSomeAdapter implements AdapterInterface
     }
 
     /**
-     * Sets the console output.
-     *
-     * @param OutputInterface $output Output
-     * @return AdapterInterface
+     * {@inheritdoc}
      */
     public function setOutput(OutputInterface $output)
     {
@@ -89,9 +88,7 @@ class TestSomeAdapter implements AdapterInterface
     }
 
     /**
-     * Gets the console output.
-     *
-     * @return OutputInterface
+     * {@inheritdoc}
      */
     public function getOutput()
     {
@@ -99,13 +96,7 @@ class TestSomeAdapter implements AdapterInterface
     }
 
     /**
-     * Records a migration being run.
-     *
-     * @param MigrationInterface $migration Migration
-     * @param string $direction Direction
-     * @param int $startTime Start Time
-     * @param int $endTime End Time
-     * @return AdapterInterface
+     * {@inheritdoc}
      */
     public function migrated(MigrationInterface $migration, $direction, $startTime, $endTime)
     {
@@ -114,10 +105,7 @@ class TestSomeAdapter implements AdapterInterface
     }
 
     /**
-     * Does the schema table exist?
-     *
-     * @deprecated use hasTable instead.
-     * @return boolean
+     * {@inheritdoc}
      */
     public function hasSchemaTable()
     {
@@ -125,19 +113,14 @@ class TestSomeAdapter implements AdapterInterface
     }
 
     /**
-     * Creates the schema table.
-     *
-     * @return void
+     * {@inheritdoc}
      */
     public function createSchemaTable()
     {
-        // TODO: Implement createSchemaTable() method.
     }
 
     /**
-     * Returns the adapter type.
-     *
-     * @return string
+     * {@inheritdoc}
      */
     public function getAdapterType()
     {
@@ -145,30 +128,21 @@ class TestSomeAdapter implements AdapterInterface
     }
 
     /**
-     * Initializes the database connection.
-     *
-     * @throws \RuntimeException When the requested database driver is not installed.
-     * @return void
+     * {@inheritdoc}
      */
     public function connect()
     {
-        // TODO: Implement connect() method.
     }
 
     /**
-     * Closes the database connection.
-     *
-     * @return void
+     * {@inheritdoc}
      */
     public function disconnect()
     {
-        // TODO: Implement disconnect() method.
     }
 
     /**
-     * Does the adapter support transactions?
-     *
-     * @return boolean
+     * {@inheritdoc}
      */
     public function hasTransactions()
     {
@@ -176,106 +150,70 @@ class TestSomeAdapter implements AdapterInterface
     }
 
     /**
-     * Begin a transaction.
-     *
-     * @return void
+     * {@inheritdoc}
      */
     public function beginTransaction()
     {
-        // TODO: Implement beginTransaction() method.
     }
 
     /**
-     * Commit a transaction.
-     *
-     * @return void
+     * {@inheritdoc}
      */
     public function commitTransaction()
     {
-        // TODO: Implement commitTransaction() method.
     }
 
     /**
-     * Rollback a transaction.
-     *
-     * @return void
+     * {@inheritdoc}
      */
     public function rollbackTransaction()
     {
-        // TODO: Implement rollbackTransaction() method.
     }
 
     /**
-     * Executes a SQL statement and returns the number of affected rows.
-     *
-     * @param string $sql SQL
-     * @return int
+     * {@inheritdoc}
      */
     public function execute($sql)
     {
-        // TODO: Implement execute() method.
     }
 
     /**
-     * Executes a SQL statement and returns the result as an array.
-     *
-     * @param string $sql SQL
-     * @return array
+     * {@inheritdoc}
      */
     public function query($sql)
     {
-        // TODO: Implement query() method.
     }
 
     /**
-     * Executes a query and returns only one row as an array.
-     *
-     * @param string $sql SQL
-     * @return array
+     * {@inheritdoc}
      */
     public function fetchRow($sql)
     {
-        // TODO: Implement fetchRow() method.
     }
 
     /**
-     * Executes a query and returns an array of rows.
-     *
-     * @param string $sql SQL
-     * @return array
+     * {@inheritdoc}
      */
     public function fetchAll($sql)
     {
-        // TODO: Implement fetchAll() method.
     }
 
     /**
-     * Quotes a table name for use in a query.
-     *
-     * @param string $tableName Table Name
-     * @return string
+     * {@inheritdoc}
      */
     public function quoteTableName($tableName)
     {
-        // TODO: Implement quoteTableName() method.
     }
 
     /**
-     * Quotes a column name for use in a query.
-     *
-     * @param string $columnName Table Name
-     * @return string
+     * {@inheritdoc}
      */
     public function quoteColumnName($columnName)
     {
-        // TODO: Implement quoteColumnName() method.
     }
 
     /**
-     * Checks to see if a table exists.
-     *
-     * @param string $tableName Table Name
-     * @return boolean
+     * {@inheritdoc}
      */
     public function hasTable($tableName)
     {
@@ -283,56 +221,35 @@ class TestSomeAdapter implements AdapterInterface
     }
 
     /**
-     * Creates the specified database table.
-     *
-     * @param Table $table Table
-     * @return void
+     * {@inheritdoc}
      */
     public function createTable(Table $table)
     {
-        // TODO: Implement createTable() method.
     }
 
     /**
-     * Renames the specified database table.
-     *
-     * @param string $tableName Table Name
-     * @param string $newName New Name
-     * @return void
+     * {@inheritdoc}
      */
     public function renameTable($tableName, $newName)
     {
-        // TODO: Implement renameTable() method.
     }
 
     /**
-     * Drops the specified database table.
-     *
-     * @param string $tableName Table Name
-     * @return void
+     * {@inheritdoc}
      */
     public function dropTable($tableName)
     {
-        // TODO: Implement dropTable() method.
     }
 
     /**
-     * Returns table columns
-     *
-     * @param string $tableName Table Name
-     * @return Column[]
+     * {@inheritdoc}
      */
     public function getColumns($tableName)
     {
-        // TODO: Implement getColumns() method.
     }
 
     /**
-     * Checks to see if a column exists.
-     *
-     * @param string $tableName Table Name
-     * @param string $columnName Column Name
-     * @return boolean
+     * {@inheritdoc}
      */
     public function hasColumn($tableName, $columnName)
     {
@@ -340,61 +257,35 @@ class TestSomeAdapter implements AdapterInterface
     }
 
     /**
-     * Adds the specified column to a database table.
-     *
-     * @param Table $table Table
-     * @param Column $column Column
-     * @return void
+     * {@inheritdoc}
      */
     public function addColumn(Table $table, Column $column)
     {
-        // TODO: Implement addColumn() method.
     }
 
     /**
-     * Renames the specified column.
-     *
-     * @param string $tableName Table Name
-     * @param string $columnName Column Name
-     * @param string $newColumnName New Column Name
-     * @return void
+     * {@inheritdoc}
      */
     public function renameColumn($tableName, $columnName, $newColumnName)
     {
-        // TODO: Implement renameColumn() method.
     }
 
     /**
-     * Change a table column type.
-     *
-     * @param string $tableName Table Name
-     * @param string $columnName Column Name
-     * @param Column $newColumn New Column
-     * @return Table
+     * {@inheritdoc}
      */
     public function changeColumn($tableName, $columnName, Column $newColumn)
     {
-        // TODO: Implement changeColumn() method.
     }
 
     /**
-     * Drops the specified column.
-     *
-     * @param string $tableName Table Name
-     * @param string $columnName Column Name
-     * @return void
+     * {@inheritdoc}
      */
     public function dropColumn($tableName, $columnName)
     {
-        // TODO: Implement dropColumn() method.
     }
 
     /**
-     * Checks to see if an index exists.
-     *
-     * @param string $tableName Table Name
-     * @param mixed $columns Column(s)
-     * @return boolean
+     * {@inheritdoc}
      */
     public function hasIndex($tableName, $columns)
     {
@@ -402,48 +293,28 @@ class TestSomeAdapter implements AdapterInterface
     }
 
     /**
-     * Adds the specified index to a database table.
-     *
-     * @param Table $table Table
-     * @param Index $index Index
-     * @return void
+     * {@inheritdoc}
      */
     public function addIndex(Table $table, Index $index)
     {
-        // TODO: Implement addIndex() method.
     }
 
     /**
-     * Drops the specified index from a database table.
-     *
-     * @param string $tableName
-     * @param mixed $columns Column(s)
-     * @return void
+     * {@inheritdoc}
      */
     public function dropIndex($tableName, $columns)
     {
-        // TODO: Implement dropIndex() method.
     }
 
     /**
-     * Drops the index specified by name from a database table.
-     *
-     * @param string $tableName
-     * @param string $indexName
-     * @return void
+     * {@inheritdoc}
      */
     public function dropIndexByName($tableName, $indexName)
     {
-        // TODO: Implement dropIndexByName() method.
     }
 
     /**
-     * Checks to see if a foreign key exists.
-     *
-     * @param string $tableName
-     * @param string[] $columns Column(s)
-     * @param string $constraint Constraint name
-     * @return boolean
+     * {@inheritdoc}
      */
     public function hasForeignKey($tableName, $columns, $constraint = null)
     {
@@ -451,34 +322,21 @@ class TestSomeAdapter implements AdapterInterface
     }
 
     /**
-     * Adds the specified foreign key to a database table.
-     *
-     * @param Table $table
-     * @param ForeignKey $foreignKey
-     * @return void
+     * {@inheritdoc}
      */
     public function addForeignKey(Table $table, ForeignKey $foreignKey)
     {
-        // TODO: Implement addForeignKey() method.
     }
 
     /**
-     * Drops the specified foreign key from a database table.
-     *
-     * @param string $tableName
-     * @param string[] $columns Column(s)
-     * @param string $constraint Constraint name
-     * @return void
+     * {@inheritdoc}
      */
     public function dropForeignKey($tableName, $columns, $constraint = null)
     {
-        // TODO: Implement dropForeignKey() method.
     }
 
     /**
-     * Returns an array of the supported Phinx column types.
-     *
-     * @return array
+     * {@inheritdoc}
      */
     public function getColumnTypes()
     {
@@ -486,10 +344,7 @@ class TestSomeAdapter implements AdapterInterface
     }
 
     /**
-     * Checks that the given column is of a supported type.
-     *
-     * @param  Column $column
-     * @return boolean
+     * {@inheritdoc}
      */
     public function isValidColumnType(Column $column)
     {
@@ -497,11 +352,7 @@ class TestSomeAdapter implements AdapterInterface
     }
 
     /**
-     * Converts the Phinx logical type to the adapter's SQL type.
-     *
-     * @param string $type
-     * @param integer $limit
-     * @return string
+     * {@inheritdoc}
      */
     public function getSqlType($type, $limit = null)
     {
@@ -509,22 +360,14 @@ class TestSomeAdapter implements AdapterInterface
     }
 
     /**
-     * Creates a new database.
-     *
-     * @param string $name Database Name
-     * @param array $options Options
-     * @return void
+     * {@inheritdoc}
      */
     public function createDatabase($name, $options = array())
     {
-        // TODO: Implement createDatabase() method.
     }
 
     /**
-     * Checks to see if a database exists.
-     *
-     * @param string $name Database Name
-     * @return boolean
+     * {@inheritdoc}
      */
     public function hasDatabase($name)
     {
@@ -532,25 +375,16 @@ class TestSomeAdapter implements AdapterInterface
     }
 
     /**
-     * Drops the specified database.
-     *
-     * @param string $name Database Name
-     * @return void
+     * {@inheritdoc}
      */
     public function dropDatabase($name)
     {
-        // TODO: Implement dropDatabase() method.
     }
 
     /**
-     * Inserts data into the table
-     *
-     * @param Table $table where to insert data
-     * @param array $columns column names
-     * @param $data
+     * {@inheritdoc}
      */
     public function insert(Table $table, $columns, $data)
     {
-        // TODO: Implement insert() method.
     }
 }

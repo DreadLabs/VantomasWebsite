@@ -1,13 +1,28 @@
 <?php
+
+/*
+ * This file is part of the VantomasWebsite package.
+ *
+ * (c) Thomas Juhnke <dev@van-tomas.de>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace DreadLabs\VantomasWebsite\Tests\Fixture\Twitter;
 
 use DreadLabs\VantomasWebsite\Http\ResponseInterface;
 
+/**
+ * DummyResponse
+ *
+ * @author Thomas Juhnke <dev@van-tomas.de>
+ */
 class DummyResponse implements ResponseInterface
 {
 
     /**
-     * @return string
+     * {@inheritdoc}
      */
     public function getBody()
     {
@@ -15,7 +30,7 @@ class DummyResponse implements ResponseInterface
     }
 
     /**
-     * @return int
+     * {@inheritdoc}
      */
     public function getStatusCode()
     {
@@ -23,10 +38,9 @@ class DummyResponse implements ResponseInterface
     }
 
     /**
-     * @return array
+     * {@inheritdoc}
      */
     public function getHeaders()
     {
-        // TODO: Implement getHeaders() method.
     }
 }

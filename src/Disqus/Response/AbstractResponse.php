@@ -1,11 +1,27 @@
 <?php
+
+/*
+ * This file is part of the VantomasWebsite package.
+ *
+ * (c) Thomas Juhnke <dev@van-tomas.de>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace DreadLabs\VantomasWebsite\Disqus\Response;
 
+/**
+ * Abstract resource response
+ *
+ * Orchestrates content validation, delivery and error information retrieval.
+ *
+ * @author Thomas Juhnke <dev@van-tomas.de>
+ */
 abstract class AbstractResponse
 {
 
     /**
-     *
      * @var \stdClass
      */
     protected $content = null;
@@ -16,6 +32,7 @@ abstract class AbstractResponse
      * Implement the necessary logic of the specific response format here.
      *
      * @param string $content
+     *
      * @return void
      */
     abstract public function setContent($content);
@@ -36,6 +53,7 @@ abstract class AbstractResponse
      * validates the content by checking if an error exists in the API response
      *
      * @return void
+     *
      * @throws Exception if validation went wrong, e.g. an error was detected in the response
      */
     final protected function validateContent()
@@ -48,7 +66,7 @@ abstract class AbstractResponse
     /**
      * flags if the response contains an error property which is not 0
      *
-     * @return boolean
+     * @return bool
      */
     protected function hasError()
     {
@@ -58,7 +76,7 @@ abstract class AbstractResponse
     /**
      * returns the response error code
      *
-     * @return integer
+     * @return int
      */
     protected function getErrorCode()
     {

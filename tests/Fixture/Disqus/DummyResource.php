@@ -1,61 +1,58 @@
 <?php
+
+/*
+ * This file is part of the VantomasWebsite package.
+ *
+ * (c) Thomas Juhnke <dev@van-tomas.de>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace DreadLabs\VantomasWebsite\Tests\Fixture\Disqus;
 
 use DreadLabs\VantomasWebsite\Disqus\ResourceInterface;
 
+/**
+ * DummyResource
+ *
+ * @author Thomas Juhnke <dev@van-tomas.de>
+ */
 class DummyResource implements ResourceInterface
 {
 
     /**
-     * sets the base url for the resource
-     *
-     * @param string $baseUrl
-     * @return void
+     * {@inheritdoc}
      */
     public function setBaseUrl($baseUrl)
     {
-        // TODO: Implement setBaseUrl() method.
     }
 
     /**
-     * sets the resource signature and initiates the concrete resource implementation initialization
-     *
-     * @param string $resourceSignature
-     * @return void
+     * {@inheritdoc}
      */
     public function setResourceSignature($resourceSignature)
     {
-        // TODO: Implement setResourceSignature() method.
     }
 
     /**
-     * sets the resource parameters
-     *
-     * @param array $parameters
-     * @return void
+     * {@inheritdoc}
      */
     public function setParameters(array $parameters)
     {
-        // TODO: Implement setParameters() method.
     }
 
     /**
-     * returns the URL which is build depending on the given parameters & base url
-     *
-     * @return string
+     * {@inheritdoc}
      */
     public function getUrl()
     {
-        // TODO: Implement getUrl() method.
     }
 
     /**
-     * returns the format of the given resource signature
-     *
-     * @return string
+     * {@inheritdoc}
      */
     public function getFormat()
     {
-        // TODO: Implement getFormat() method.
     }
 }

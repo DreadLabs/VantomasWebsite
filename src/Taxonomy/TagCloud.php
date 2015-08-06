@@ -1,8 +1,23 @@
 <?php
+
+/*
+ * This file is part of the VantomasWebsite package.
+ *
+ * (c) Thomas Juhnke <dev@van-tomas.de>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace DreadLabs\VantomasWebsite\Taxonomy;
 
 use Traversable;
 
+/**
+ * TagCloud
+ *
+ * @author Thomas Juhnke <dev@van-tomas.de>
+ */
 class TagCloud implements TagCloudInterface
 {
 
@@ -27,11 +42,9 @@ class TagCloud implements TagCloudInterface
     }
 
     /**
-     * (PHP 5 &gt;= 5.0.0)<br/>
      * Retrieve an external iterator
-     * @link http://php.net/manual/en/iteratoraggregate.getiterator.php
-     * @return Traversable An instance of an object implementing <b>Iterator</b> or
-     * <b>Traversable</b>
+     *
+     * @return Traversable
      */
     public function getIterator()
     {
@@ -39,16 +52,13 @@ class TagCloud implements TagCloudInterface
     }
 
     /**
-     * (PHP 5 &gt;= 5.0.0)<br/>
      * Whether a offset exists
-     * @link http://php.net/manual/en/arrayaccess.offsetexists.php
-     * @param mixed $offset <p>
-     * An offset to check for.
-     * </p>
-     * @return boolean true on success or false on failure.
-     * </p>
-     * <p>
+     *
      * The return value will be casted to boolean if non-boolean was returned.
+     *
+     * @param mixed $offset
+     *
+     * @return boolean true on success or false on failure.
      */
     public function offsetExists($offset)
     {
@@ -56,12 +66,10 @@ class TagCloud implements TagCloudInterface
     }
 
     /**
-     * (PHP 5 &gt;= 5.0.0)<br/>
      * Offset to retrieve
-     * @link http://php.net/manual/en/arrayaccess.offsetget.php
-     * @param mixed $offset <p>
-     * The offset to retrieve.
-     * </p>
+     *
+     * @param mixed $offset
+     *
      * @return mixed Can return all value types.
      */
     public function offsetGet($offset)
@@ -70,15 +78,11 @@ class TagCloud implements TagCloudInterface
     }
 
     /**
-     * (PHP 5 &gt;= 5.0.0)<br/>
      * Offset to set
-     * @link http://php.net/manual/en/arrayaccess.offsetset.php
-     * @param mixed $offset <p>
-     * The offset to assign the value to.
-     * </p>
-     * @param mixed $value <p>
-     * The value to set.
-     * </p>
+     *
+     * @param mixed $offset
+     * @param mixed $value
+     *
      * @return void
      */
     public function offsetSet($offset, $value)
@@ -91,12 +95,10 @@ class TagCloud implements TagCloudInterface
     }
 
     /**
-     * (PHP 5 &gt;= 5.0.0)<br/>
      * Offset to unset
-     * @link http://php.net/manual/en/arrayaccess.offsetunset.php
-     * @param Tag $offset <p>
-     * The offset to unset.
-     * </p>
+     *
+     * @param Tag $offset
+     *
      * @return void
      */
     public function offsetUnset($offset)
@@ -107,13 +109,11 @@ class TagCloud implements TagCloudInterface
     }
 
     /**
-     * (PHP 5 &gt;= 5.1.0)<br/>
      * Count elements of an object
-     * @link http://php.net/manual/en/countable.count.php
-     * @return int The custom count as an integer.
-     * </p>
-     * <p>
+     *
      * The return value is cast to an integer.
+     *
+     * @return int
      */
     public function count()
     {
@@ -122,6 +122,7 @@ class TagCloud implements TagCloudInterface
 
     /**
      * @param Tag $tag
+     *
      * @return void
      */
     public function add(Tag $tag)
@@ -131,6 +132,7 @@ class TagCloud implements TagCloudInterface
 
     /**
      * @param Tag $tag
+     *
      * @return void
      */
     public function remove(Tag $tag)

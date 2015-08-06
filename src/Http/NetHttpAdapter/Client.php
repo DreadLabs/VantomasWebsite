@@ -1,4 +1,14 @@
 <?php
+
+/*
+ * This file is part of the VantomasWebsite package.
+ *
+ * (c) Thomas Juhnke <dev@van-tomas.de>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace DreadLabs\VantomasWebsite\Http\NetHttpAdapter;
 
 use DreadLabs\VantomasWebsite\Http\ClientInterface;
@@ -6,6 +16,8 @@ use DreadLabs\VantomasWebsite\Http\ResponseInterface;
 
 /**
  * Adapter to \Net_Http_Client
+ *
+ * @author Thomas Juhnke <dev@van-tomas.de>
  */
 class Client implements ClientInterface
 {
@@ -25,6 +37,7 @@ class Client implements ClientInterface
 
     /**
      * @param string $userAgent
+     *
      * @return void
      */
     public function setUserAgent($userAgent)
@@ -35,6 +48,7 @@ class Client implements ClientInterface
     /**
      * @param string $key
      * @param string $value
+     *
      * @return void
      */
     public function setHeader($key, $value)
@@ -44,6 +58,7 @@ class Client implements ClientInterface
 
     /**
      * @param string $url
+     *
      * @return ResponseInterface
      */
     public function get($url)
@@ -68,6 +83,7 @@ class Client implements ClientInterface
     /**
      * @param string $uri
      * @param mixed $query
+     *
      * @return ResponseInterface
      */
     public function post($uri, $query)

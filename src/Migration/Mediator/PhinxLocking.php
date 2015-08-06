@@ -1,4 +1,14 @@
 <?php
+
+/*
+ * This file is part of the VantomasWebsite package.
+ *
+ * (c) Thomas Juhnke <dev@van-tomas.de>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace DreadLabs\VantomasWebsite\Migration\Mediator;
 
 use DreadLabs\VantomasWebsite\Migration\Exception\InvalidDirectionException;
@@ -14,6 +24,8 @@ use DreadLabs\VantomasWebsite\Migration\MigratorInterface;
  *
  * Mediates the phinx migrator and a mutex lock to allow an application to
  * switch to maintenance mode if something went wrong.
+ *
+ * @author Thomas Juhnke <dev@van-tomas.de>
  */
 class PhinxLocking implements MediatorInterface
 {
