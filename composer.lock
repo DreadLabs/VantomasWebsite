@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "cac26962a0c81fa9421348cbb7b42b5f",
+    "hash": "b3a0ec049578a476ae11013fe8e9eeda",
     "packages": [
         {
             "name": "arg/tagcloud",
