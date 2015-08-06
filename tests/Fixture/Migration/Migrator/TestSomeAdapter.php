@@ -541,4 +541,16 @@ class TestSomeAdapter implements AdapterInterface
     {
         // TODO: Implement dropDatabase() method.
     }
+
+    /**
+     * Inserts data into the table
+     *
+     * @param Table $table where to insert data
+     * @param array $columns column names
+     * @param $data
+     */
+    public function insert(Table $table, $columns, $data)
+    {
+        // TODO: Implement insert() method.
+    }
 }

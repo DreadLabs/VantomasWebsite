@@ -111,7 +111,6 @@ class TestAllAdapter implements AdapterInterface
      */
     public function migrated(MigrationInterface $migration, $direction, $startTime, $endTime)
     {
-
         return $this;
     }
 
@@ -542,5 +541,17 @@ class TestAllAdapter implements AdapterInterface
     public function dropDatabase($name)
     {
         // TODO: Implement dropDatabase() method.
+    }
+
+    /**
+     * Inserts data into the table
+     *
+     * @param Table $table where to insert data
+     * @param array $columns column names
+     * @param $data
+     */
+    public function insert(Table $table, $columns, $data)
+    {
+        // TODO: Implement insert() method.
     }
 }
