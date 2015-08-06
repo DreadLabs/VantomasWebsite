@@ -1,6 +1,7 @@
 <?php
 namespace DreadLabs\VantomasWebsite\Migration\Locking;
 
+use DreadLabs\VantomasWebsite\Migration\Exception\LockingException;
 use NinjaMutex\Lock\LockInterface;
 
 /**
@@ -31,27 +32,28 @@ class Mutex implements MutexInterface
     }
 
     /**
-     * @return bool
-     */
-    public function isLocked()
-    {
-        return $this->mutex->isLocked();
-    }
-
-    /**
      * @param int $timeout Timeout in milliseconds
-     * @return void
+     *
+     * @return bool
+     *
+     * @throws LockingException If the lock is not acquirable
      */
     public function acquireLock($timeout)
     {
-        $this->mutex->acquireLock($timeout);
+        $isAcquired = $this->mutex->acquireLock($timeout);
+
+        if (!$isAcquired) {
+            throw new LockingException('Lock cannot be acquired.', 1438871269);
+        }
+
+        return $isAcquired;
     }
 
     /**
-     * @return void
+     * @return bool
      */
     public function releaseLock()
     {
-        $this->mutex->releaseLock();
+        return $this->mutex->releaseLock();
     }
 }

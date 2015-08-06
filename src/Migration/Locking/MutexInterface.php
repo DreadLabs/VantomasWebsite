@@ -1,28 +1,26 @@
 <?php
 namespace DreadLabs\VantomasWebsite\Migration\Locking;
 
+use DreadLabs\VantomasWebsite\Migration\Exception\LockingException;
+
 interface MutexInterface
 {
-
-    /**
-     * Flags if the mutex is locked already
-     *
-     * @return bool
-     */
-    public function isLocked();
 
     /**
      * Acquires a lock
      *
      * @param int $timeout
-     * @return void
+     *
+     * @return bool
+     *
+     * @throws LockingException If the lock is not acquirable
      */
     public function acquireLock($timeout);
 
     /**
      * Releases a lock
      *
-     * @return void
+     * @return bool
      */
     public function releaseLock();
 }

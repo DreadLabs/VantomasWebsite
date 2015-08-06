@@ -65,7 +65,7 @@ class PhinxLocking implements MediatorInterface
     public function negotiate()
     {
         try {
-            $this->assertAcquirableLock();
+            $this->mutex->acquireLock(1000);
             $this->executeMigrations();
         } catch (LockingException $exc) {
             $this->logger->emergency($exc->getMessage());
@@ -79,23 +79,8 @@ class PhinxLocking implements MediatorInterface
             $this->logger->emergency('Migration of version ' . $exc->getCode() . ' failed.', array($exc->getMessage()));
 
             throw $exc;
-        }
-    }
-
-    /**
-     * Asserts an acquirable mutex lock
-     *
-     * @return void
-     *
-     * @throws LockingException If the mutex is locked
-     */
-    private function assertAcquirableLock()
-    {
-        if ($this->mutex->isLocked()) {
-            throw new LockingException(
-                'Unable to acquire migration lock. Some migrations may not have been applied. Manual intervention required.',
-                1437917144
-            );
+        } finally {
+            $this->mutex->releaseLock();
         }
     }
 
@@ -107,12 +92,8 @@ class PhinxLocking implements MediatorInterface
     private function executeMigrations()
     {
         if ($this->migrator->needsToRun()) {
-            $this->mutex->acquireLock(1000);
-
             $latestVersion = $this->migrator->migrate();
             $this->logger->info('Migrate all migrations up to version ' . $latestVersion . '.');
-
-            $this->mutex->releaseLock();
         }
     }
 }
