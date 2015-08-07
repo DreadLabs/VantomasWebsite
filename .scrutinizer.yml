@@ -17,25 +17,29 @@ coding_style:
         spaces:
             general:
                 linefeed_character: newline
+            before_parentheses:
+                closure_definition: true
+            around_operators:
+                concatenation: true
         braces:
             classes_functions:
-                class: undefined
-                function: undefined
+                class: new-line
+                function: end-of-line
                 closure: undefined
             if:
-                opening: undefined
+                opening: end-of-line
             for:
-                opening: undefined
+                opening: end-of-line
             while:
-                opening: undefined
+                opening: end-of-line
             do_while:
-                opening: undefined
+                opening: end-of-line
             switch:
-                opening: undefined
+                opening: end-of-line
             try:
-                opening: undefined
+                opening: end-of-line
         upper_lower_casing:
             keywords:
-                general: undefined
+                general: lower
             constants:
-                true_false_null: undefined
+                true_false_null: lower

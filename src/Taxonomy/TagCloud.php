@@ -81,7 +81,7 @@ class TagCloud implements TagCloudInterface
      * Offset to set
      *
      * @param mixed $offset
-     * @param mixed $value
+     * @param string $value
      *
      * @return void
      */
