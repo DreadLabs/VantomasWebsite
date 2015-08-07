@@ -17,7 +17,7 @@ namespace DreadLabs\VantomasWebsite\Disqus\Resource;
  * Use this in your application in order to resolve to proper
  * resource objects.
  *
- * @Thomas Juhnke <dev@van-tomas.de>
+ * @author Thomas Juhnke <dev@van-tomas.de>
  */
 interface ResolverInterface
 {
