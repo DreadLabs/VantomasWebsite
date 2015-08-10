@@ -5,6 +5,7 @@
 [![SensioLabsInsight](https://insight.sensiolabs.com/projects/4cc6c4a9-95b9-4cbb-a047-ee578d989188/mini.png)](https://insight.sensiolabs.com/projects/4cc6c4a9-95b9-4cbb-a047-ee578d989188)
 [![Code Climate](https://codeclimate.com/github/DreadLabs/VantomasWebsite/badges/gpa.svg)](https://codeclimate.com/github/DreadLabs/VantomasWebsite)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/DreadLabs/VantomasWebsite/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/DreadLabs/VantomasWebsite/?branch=master)
+[![Dependency Status](https://www.versioneye.com/user/projects/55c8f8ffbeaa4c001d000001/badge.svg?style=flat)](https://www.versioneye.com/user/projects/55c8f8ffbeaa4c001d000001)
 
 This repository contains all necessary domain and core logic to build the
 website www.van-tomas.de
