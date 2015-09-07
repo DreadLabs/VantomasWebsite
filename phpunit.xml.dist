@@ -33,6 +33,7 @@
                 <directory>./vendor</directory>
                 <directory>./tests</directory>
                 <directory suffix="Interface.php">./src/</directory>
+                <directory suffix="Curl.php">./src/Disqus/Client/</directory>
             </exclude>
         </whitelist>
     </filter>

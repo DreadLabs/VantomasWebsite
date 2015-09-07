@@ -26,13 +26,6 @@ class DummyClient implements ClientInterface
     /**
      * {@inheritdoc}
      */
-    public function connectWith($clientName)
-    {
-    }
-
-    /**
-     * {@inheritdoc}
-     */
     public function connectTo(ResourceInterface $resource)
     {
     }

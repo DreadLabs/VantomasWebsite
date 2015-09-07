@@ -20,44 +20,35 @@ interface ClientInterface
 {
 
     /**
-     * sets the internal client name property and should initialize a concrete client implementation
-     *
-     * @param string $clientName
-     *
-     * @return ClientInterface
-     */
-    public function connectWith($clientName);
-
-    /**
-     * connects the client in any manner
+     * Tells the client to which endpoint it has to connect
      *
      * Implement this method to create ressources, set options of your 3rd party
      * client library etc.
      *
      * @param ResourceInterface $resource
      *
-     * @return ClientInterface
+     * @return void
      */
     public function connectTo(ResourceInterface $resource);
 
     /**
-     * sends the actual request
+     * Sends the actual request
      *
-     * @return ClientInterface
+     * @return void
      */
     public function send();
 
     /**
-     * disconnects the client in any manner
+     * Disconnects the client
      *
      * Implement this method to destroy ressources, perform cleanup tasks etc.
      *
-     * @return ClientInterface
+     * @return void
      */
     public function disconnect();
 
     /**
-     * returns the response for further processing
+     * Returns the response
      *
      * @return ResponseInterface
      */

@@ -11,6 +11,7 @@
 
 namespace DreadLabs\VantomasWebsite\Disqus\Client;
 
+use DreadLabs\VantomasWebsite\Disqus\ClientInterface;
 use DreadLabs\VantomasWebsite\Disqus\ResourceInterface;
 use DreadLabs\VantomasWebsite\Disqus\ResponseInterface;
 
@@ -19,7 +20,7 @@ use DreadLabs\VantomasWebsite\Disqus\ResponseInterface;
  *
  * @author Thomas Juhnke <dev@van-tomas.de>
  */
-class Curl extends AbstractClient
+class Curl implements ClientInterface
 {
 
     /**
@@ -54,9 +55,10 @@ class Curl extends AbstractClient
         }
 
         curl_setopt($this->connection, CURLOPT_RETURNTRANSFER, 1);
-        curl_setopt($this->connection, CURLOPT_URL, $resource->getUrl());
         curl_setopt($this->connection, CURLOPT_FOLLOWLOCATION, 1);
         curl_setopt($this->connection, CURLOPT_MAXREDIRS, 5);
+
+        curl_setopt($this->connection, CURLOPT_URL, $resource->getUrl());
 
         $this->response->setFormat($resource->getFormat());
     }
@@ -64,7 +66,7 @@ class Curl extends AbstractClient
     /**
      * {@inheritdoc}
      */
-    public function getResponse()
+    public function send()
     {
         $result = curl_exec($this->connection);
 
@@ -73,7 +75,13 @@ class Curl extends AbstractClient
         }
 
         $this->response->setContent($result);
+    }
 
+    /**
+     * {@inheritdoc}
+     */
+    public function getResponse()
+    {
         return $this->response;
     }
 

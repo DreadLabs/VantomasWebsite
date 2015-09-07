@@ -13,7 +13,6 @@ namespace DreadLabs\VantomasWebsite\Tests\Unit\Disqus;
 
 use DreadLabs\VantomasWebsite\Disqus\Api;
 use DreadLabs\VantomasWebsite\Tests\Fixture\Disqus\DummyClient;
-use DreadLabs\VantomasWebsite\Tests\Fixture\Disqus\DummyConcreteClient;
 use DreadLabs\VantomasWebsite\Tests\Fixture\Disqus\DummyConfiguration;
 use DreadLabs\VantomasWebsite\Tests\Fixture\Disqus\DummyResource;
 use DreadLabs\VantomasWebsite\Tests\Fixture\Disqus\DummyResponse;
@@ -35,7 +34,7 @@ class ApiResourceTest extends \PHPUnit_Framework_TestCase
     public function setUp()
     {
         $this->configuration = new DummyConfiguration();
-        $this->client = new DummyConcreteClient();
+        $this->client = new DummyClient();
         $this->resource = new DummyResource();
     }
 
@@ -52,7 +51,7 @@ class ApiResourceTest extends \PHPUnit_Framework_TestCase
             $resource
         );
 
-        $api->execute('foo/bar.json');
+        $api->query('foo/bar.json');
     }
 
     public function testExecutionSetsResourceSignatureOnResource()
@@ -68,7 +67,7 @@ class ApiResourceTest extends \PHPUnit_Framework_TestCase
             $resource
         );
 
-        $api->execute('foo/bar.json');
+        $api->query('foo/bar.json');
     }
 
     public function testApiKeyIsAddedFromConfigurationToParameters()
@@ -89,9 +88,9 @@ class ApiResourceTest extends \PHPUnit_Framework_TestCase
         $resource = $this->getMock(DummyResource::class);
         $resource->expects($this->once())->method('setParameters')->with($expectedParameters);
 
-        $client->expects($this->once())->method('connectTo')->with($resource)->will($this->returnValue($client));
-        $client->expects($this->once())->method('send')->will($this->returnValue($client));
-        $client->expects($this->once())->method('disconnect')->will($this->returnValue($client));
+        $client->expects($this->once())->method('connectTo')->with($resource);
+        $client->expects($this->once())->method('send');
+        $client->expects($this->once())->method('disconnect');
         $client->expects($this->once())->method('getResponse')->will($this->returnValue($response));
 
         $api = new Api(
@@ -100,6 +99,6 @@ class ApiResourceTest extends \PHPUnit_Framework_TestCase
             $resource
         );
 
-        $api->with($inputParameters);
+        $api->query('', $inputParameters);
     }
 }

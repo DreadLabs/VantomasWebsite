@@ -27,9 +27,13 @@ class ConcreteResponseTest extends \PHPUnit_Framework_TestCase
 
     public function setUp()
     {
-        $this->validContent = file_get_contents(dirname(__FILE__) . '/../../Fixture/Disqus/ValidResponseContent.json');
+        $this->validContent = file_get_contents(
+            dirname(__FILE__) . '/../../Fixture/Disqus/ValidResponseContent.json'
+        );
 
-        $this->invalidContent = file_get_contents(dirname(__FILE__) . '/../../Fixture/Disqus/InvalidResponseContent.json');
+        $this->invalidContent = file_get_contents(
+            dirname(__FILE__) . '/../../Fixture/Disqus/InvalidResponseContent.json'
+        );
     }
 
     public function testContentReturnsAnInstanceOfStdClass()

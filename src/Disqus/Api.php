@@ -49,44 +49,25 @@ class Api implements ApiInterface
         $this->configuration = $configuration;
         $this->client = $client;
         $this->resource = $resource;
-    }
 
-    /**
-     * {@inheritdoc}
-     */
-    public function connectWith($clientName)
-    {
-        $this->client->connectWith($clientName);
-
-        return $this;
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function execute($resourceSignature)
-    {
         $this->resource->setBaseUrl($this->configuration->getBaseUrl());
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function query($resourceSignature, array $parameters = array())
+    {
         $this->resource->setResourceSignature($resourceSignature);
 
-        return $this;
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function with(array $parameters)
-    {
         $parameters['apiKey'] = $this->configuration->getApiKey();
 
         $this->resource->setParameters($parameters);
 
-        $response = $this->client
-            ->connectTo($this->resource)
-            ->send()
-            ->disconnect()
-            ->getResponse();
+        $this->client->connectTo($this->resource);
+        $this->client->send();
+        $this->client->disconnect();
 
-        return $response;
+        return $this->client->getResponse();
     }
 }
