@@ -13,7 +13,6 @@ namespace DreadLabs\VantomasWebsite\Tests\Unit\Twitter\AccessControl;
 
 use DreadLabs\VantomasWebsite\Twitter\AccessControl\AuthenticationInterface;
 use DreadLabs\VantomasWebsite\Twitter\AccessControl\AuthorizationInterface;
-use DreadLabs\VantomasWebsite\Twitter\AccessControl\Exception\AuthorizationFailedException;
 
 /**
  * DummyAuthorization

@@ -12,7 +12,6 @@
 namespace DreadLabs\VantomasWebsite\Tests\Unit\Http;
 
 use DreadLabs\VantomasWebsite\Http\ClientInterface;
-use DreadLabs\VantomasWebsite\Http\ResponseInterface;
 
 /**
  * DummyClient

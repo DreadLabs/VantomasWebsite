@@ -21,7 +21,7 @@ interface ApiInterface
 
     /**
      * @param string $key
-     * @param sting|int $value
+     * @param string|int $value
      *
      * @return void
      */

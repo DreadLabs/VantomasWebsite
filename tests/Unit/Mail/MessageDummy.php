@@ -10,7 +10,6 @@
  */
 namespace DreadLabs\VantomasWebsite\Tests\Unit\Mail;
 
-use DreadLabs\VantomasWebsite\Mail\Exception\FailedRecipientsException;
 use DreadLabs\VantomasWebsite\Mail\MessageInterface;
 
 /**

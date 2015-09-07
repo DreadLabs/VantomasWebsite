@@ -59,7 +59,8 @@ class PhinxTest extends \PHPUnit_Framework_TestCase
      *
      * @return void
      */
-    private function registerTestAdapter($className) {
+    private function registerTestAdapter($className)
+    {
         AdapterFactory::instance()->registerAdapter(
             'test',
             $className
@@ -73,7 +74,8 @@ class PhinxTest extends \PHPUnit_Framework_TestCase
      *
      * @return ConfigInterface
      */
-    private function getConfiguration($fileName) {
+    private function getConfiguration($fileName)
+    {
         return Config::fromYaml(
             __DIR__ . '/../../../Fixture/Migration/Migrator/' . $fileName
         );
