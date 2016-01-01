@@ -30,7 +30,7 @@ Currently, the domain contains of the following topics:
 
 | Topic         | Description                                                                                 |
 |---------------|---------------------------------------------------------------------------------------------|
-| Archive       | Generate a list of month/year date ranges, each linking to a list of pages within the range | 
+| Archive       | Generate a list of month/year date ranges, each linking to a list of pages within the range |
 | Disqus        | Provide a service to the Disqus API                                                         |
 | Event         | Collect events which will be published and subscribed to within the application process     |
 | EventListener | Collect all event listeners which can be used within the application                        |
@@ -47,3 +47,10 @@ Currently, the domain contains of the following topics:
 | TeaserImage   | Abstraction to how the teaser image can be generated for the blog article detail views      |
 | Twitter       | Provide a service to the Twitter API                                                        |
 | User          | Abstraction to the application user / authentication facilities                             |
+
+## TODOs
+
+### `CodeSnippet\AbstractBrush`
+
+  *  add stacking for aliases
+  *  add dependency management (if using Prism for example)
