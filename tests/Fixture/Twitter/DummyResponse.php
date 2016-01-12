@@ -32,6 +32,14 @@ class DummyResponse implements ResponseInterface
     /**
      * {@inheritdoc}
      */
+    public function isSuccess()
+    {
+        return true;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
     public function getStatusCode()
     {
         return 200;

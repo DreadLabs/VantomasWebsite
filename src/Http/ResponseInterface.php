@@ -25,6 +25,11 @@ interface ResponseInterface
     public function getStatusCode();
 
     /**
+     * @return bool
+     */
+    public function isSuccess();
+
+    /**
      * @return array
      */
     public function getHeaders();

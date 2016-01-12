@@ -27,6 +27,12 @@ class NetHttpAdapterResponseTest extends \PHPUnit_Framework_TestCase
         $this->assertSame(200, $sut->getStatusCode());
     }
 
+    public function testItReturnsTrueIfSuccessfulStatusCodeIsSet()
+    {
+        $sut = new Response(200, [], 'Lorem ipsum!');
+        $this->assertTrue($sut->isSuccess());
+    }
+
     public function testBodyWillBeReturned()
     {
         $sut = new Response(200, array(), 'Bar!');

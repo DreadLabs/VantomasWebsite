@@ -45,6 +45,14 @@ class Response implements ResponseInterface
     }
 
     /**
+     * @return bool
+     */
+    public function isSuccess()
+    {
+        return 200 === $this->getStatusCode();
+    }
+
+    /**
      * @return string
      */
     public function getBody()
