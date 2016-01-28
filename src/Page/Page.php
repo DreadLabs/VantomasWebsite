@@ -11,6 +11,8 @@
 
 namespace DreadLabs\VantomasWebsite\Page;
 
+use DreadLabs\VantomasWebsite\TeaserImage;
+
 /**
  * Page
  *
@@ -53,6 +55,11 @@ class Page
      * @var \DateTime
      */
     private $createdAt;
+
+    /**
+     * @var TeaserImage\Resource
+     */
+    private $teaserImage;
 
     /**
      * @param PageId $pageId
@@ -164,5 +171,21 @@ class Page
     public function getCreatedAt()
     {
         return $this->createdAt;
+    }
+
+    /**
+     * @param TeaserImage\Resource $teaserImage
+     */
+    public function setTeaserImage(TeaserImage\Resource $teaserImage)
+    {
+        $this->teaserImage = $teaserImage;
+    }
+
+    /**
+     * @return TeaserImage\Resource
+     */
+    public function getTeaserImage()
+    {
+        return $this->teaserImage;
     }
 }

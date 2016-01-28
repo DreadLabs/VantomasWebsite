@@ -13,6 +13,7 @@ namespace DreadLabs\VantomasWebsite\Tests\Unit\Page;
 
 use DreadLabs\VantomasWebsite\Page\Page;
 use DreadLabs\VantomasWebsite\Page\PageId;
+use DreadLabs\VantomasWebsite\TeaserImage;
 
 /**
  * PageTest
@@ -99,5 +100,16 @@ class PageTest extends \PHPUnit_Framework_TestCase
         $sut->setCreatedAt($createdAt);
 
         $this->assertSame($createdAt, $sut->getCreatedAt());
+    }
+
+    public function testTeaserImageAccessors()
+    {
+        $pageIdMock = $this->getPageIdMock();
+        $sut = new Page($pageIdMock);
+
+        $teaserImage = TeaserImage\Resource::createFromPublicUrl('/path/to/image.jpg');
+        $sut->setTeaserImage($teaserImage);
+
+        $this->assertSame($teaserImage, $sut->getTeaserImage());
     }
 }
