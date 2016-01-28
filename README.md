@@ -31,6 +31,7 @@ Currently, the domain contains of the following topics:
 | Topic         | Description                                                                                 |
 |---------------|---------------------------------------------------------------------------------------------|
 | Archive       | Generate a list of month/year date ranges, each linking to a list of pages within the range |
+| CodeSnippet   | Everything which is needed to render syntax highlighted code snippets                       |
 | Disqus        | Provide a service to the Disqus API                                                         |
 | Event         | Collect events which will be published and subscribed to within the application process     |
 | EventListener | Collect all event listeners which can be used within the application                        |
@@ -38,13 +39,13 @@ Currently, the domain contains of the following topics:
 | Http          | Interfaces and adapters for HTTP communication for the API services                         |
 | Mail          | Abstraction layer for application dependent mail systems and wrappers                       |
 | Media         | Media abstraction                                                                           |
-| Migration     | Abstraction and adapters for integration of migrations during application runtime           |
 | Page          | The main aspect for CMS: pages group content elements / blocks                              |
 | RssFeed       | Rss feed generation specific aspects                                                        |
 | SecretSanta   | A secret santa implementation for my family                                                 |
 | Sitemap       | sitemap.xml generation specific aspects                                                     |
 | Taxonomy      | Tag handling for the blog                                                                   |
 | TeaserImage   | Abstraction to how the teaser image can be generated for the blog article detail views      |
+| ThreatDefense | Simple threat defense mechanisms                                                            |
 | Twitter       | Provide a service to the Twitter API                                                        |
 | User          | Abstraction to the application user / authentication facilities                             |
 
