@@ -23,7 +23,7 @@ interface DataInterface
 {
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getValue();
 }

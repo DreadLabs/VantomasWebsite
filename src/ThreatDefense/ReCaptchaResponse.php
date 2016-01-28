@@ -30,8 +30,6 @@ class ReCaptchaResponse implements DataInterface
      * Constructor
      *
      * @param string $response
-     *
-     * @return self
      */
     private function __construct($response)
     {
@@ -71,7 +69,7 @@ class ReCaptchaResponse implements DataInterface
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getValue()
     {
