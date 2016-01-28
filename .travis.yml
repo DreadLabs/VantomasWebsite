@@ -1,13 +1,16 @@
+sudo: false
+
+addons:
+  apt:
+    packages:
+    - libxml2-utils
+    - php5-curl
+
 language: php
 php:
 #  - 7.0
   - 5.6
   - 5.5
-
-before_install:
-  - sudo apt-get update -qq
-  - sudo apt-get install -qq libxml2-utils php5-curl
-#  - pecl install xdebug
 
 before_script:
   - composer self-update
