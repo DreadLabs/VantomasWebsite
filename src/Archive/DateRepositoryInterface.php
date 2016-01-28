@@ -11,7 +11,7 @@
 
 namespace DreadLabs\VantomasWebsite\Archive;
 
-use DreadLabs\VantomasWebsite\Page\PageType;
+use DreadLabs\VantomasWebsite\Page\Type;
 
 /**
  * Interface to find all archive dates for a given page type.
@@ -24,9 +24,9 @@ interface DateRepositoryInterface
     /**
      * Finds archive dates
      *
-     * @param PageType $pageType
+     * @param Type $type
      *
      * @return Date[]
      */
-    public function find(PageType $pageType);
+    public function findByPageType(Type $type);
 }

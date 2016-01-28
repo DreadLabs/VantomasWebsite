@@ -89,9 +89,11 @@ class TagCloud implements TagCloudInterface
     {
         if (!isset($offset)) {
             $this->tags[] = $value;
-        } else {
-            $this->tags[$offset] = $value;
+
+            return;
         }
+
+        $this->tags[$offset] = $value;
     }
 
     /**
@@ -103,8 +105,8 @@ class TagCloud implements TagCloudInterface
      */
     public function offsetUnset($offset)
     {
-        $this->tags = array_filter($this->tags, function ($v) use ($offset) {
-            return $v !== $offset->getValue();
+        $this->tags = array_filter($this->tags, function ($tag) use ($offset) {
+            return $tag !== $offset->getValue();
         });
     }
 

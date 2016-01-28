@@ -11,41 +11,41 @@
 
 namespace DreadLabs\VantomasWebsite\Tests\Unit\Page;
 
-use DreadLabs\VantomasWebsite\Page\PageId;
-use DreadLabs\VantomasWebsite\Page\PageIdCollection;
+use DreadLabs\VantomasWebsite\Page\Type;
+use DreadLabs\VantomasWebsite\Page\TypeCollection;
 
 /**
- * PageIdCollectionTest
+ * TypeCollectionTest
  *
  * @author Thomas Juhnke <dev@van-tomas.de>
  */
-class PageIdCollectionTest extends \PHPUnit_Framework_TestCase
+class TypeCollectionTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
-     * @var PageIdCollection
+     * @var TypeCollection
      */
     protected $sut;
 
     public function setUp()
     {
-        $this->sut = new PageIdCollection();
+        $this->sut = new TypeCollection();
     }
 
-    public function testAddPageId()
+    public function testAddType()
     {
-        $pageId = PageId::fromString(1);
-        $this->sut->add($pageId);
+        $type = Type::fromString(1);
+        $this->sut->add($type);
 
         $this->assertTrue(isset($this->sut[0]));
-        $this->assertEquals($pageId, $this->sut[0]);
+        $this->assertEquals($type, $this->sut[0]);
     }
 
-    public function testRemovePageId()
+    public function testRemoveType()
     {
-        $pageId = PageId::fromString(2);
-        $this->sut->add($pageId);
-        unset($this->sut[$pageId]);
+        $type = Type::fromString(2);
+        $this->sut->add($type);
+        unset($this->sut[$type]);
         $this->assertFalse(isset($this->sut[1]));
 
         unset($this->sut[0]);
@@ -54,27 +54,28 @@ class PageIdCollectionTest extends \PHPUnit_Framework_TestCase
 
     public function testMixedAccessors()
     {
-        $pageId = PageId::fromString(3);
-        $this->sut[0] = $pageId;
-        $this->sut->remove($pageId);
+        $type = Type::fromString(3);
+        $this->sut[0] = $type;
+        $this->sut->remove($type);
 
         $this->assertFalse(isset($this->sut[0]));
     }
 
     public function testCounting()
     {
-        $pageId1 = PageId::fromString(4);
-        $this->sut->add($pageId1);
-        $pageId2 = PageId::fromString(5);
-        $this->sut->add($pageId2);
+        $typeOne = Type::fromString(4);
+        $this->sut->add($typeOne);
+
+        $typeTwo = Type::fromString(5);
+        $this->sut->add($typeTwo);
 
         $this->assertEquals(2, $this->sut->count());
     }
 
     public function testArrayIteratorUsage()
     {
-        $pageId = PageId::fromString(6);
-        $this->sut->add($pageId);
+        $type = Type::fromString(6);
+        $this->sut->add($type);
         $iterator = $this->sut->getIterator();
 
         $this->isInstanceOf('ArrayIterator', $iterator);
@@ -82,14 +83,15 @@ class PageIdCollectionTest extends \PHPUnit_Framework_TestCase
 
     public function testArrayCasting()
     {
-        $pageId1 = PageId::fromString(7);
-        $this->sut->add($pageId1);
-        $pageId2 = PageId::fromString(8);
-        $this->sut->add($pageId2);
+        $typeOne = Type::fromString(7);
+        $this->sut->add($typeOne);
+
+        $typeTwo = Type::fromString(8);
+        $this->sut->add($typeTwo);
 
         $expected = array(
-            $pageId1,
-            $pageId2,
+            $typeOne,
+            $typeTwo,
         );
 
         $this->assertSame($expected, $this->sut->toArray());

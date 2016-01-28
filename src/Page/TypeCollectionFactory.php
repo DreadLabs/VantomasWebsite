@@ -12,35 +12,35 @@
 namespace DreadLabs\VantomasWebsite\Page;
 
 /**
- * PageTypeCollectionFactory
+ * TypeCollectionFactory
  *
  * @author Thomas Juhnke <dev@van-tomas.de>
  */
-class PageTypeCollectionFactory implements PageTypeCollectionFactoryInterface
+class TypeCollectionFactory
 {
 
     /**
-     * @var PageTypeCollectionInterface
+     * @var TypeCollection
      */
     private $collection;
 
     /**
-     * @param PageTypeCollectionInterface $pageTypeCollection
+     * @param TypeCollection $collection
      */
-    public function __construct(PageTypeCollectionInterface $pageTypeCollection)
+    public function __construct(TypeCollection $collection)
     {
-        $this->collection = $pageTypeCollection;
+        $this->collection = $collection;
     }
 
     /**
      * @param array $types
      *
-     * @return PageTypeCollectionInterface
+     * @return TypeCollection
      */
     public function createFromArray(array $types)
     {
-        foreach ($types as $pageType) {
-            $this->collection->add(PageType::fromString($pageType));
+        foreach ($types as $type) {
+            $this->collection->add(Type::fromString($type));
         }
 
         return $this->collection;

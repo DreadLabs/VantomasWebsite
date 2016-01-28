@@ -11,7 +11,7 @@
 
 namespace DreadLabs\VantomasWebsite\Archive;
 
-use DreadLabs\VantomasWebsite\Page\PageType;
+use DreadLabs\VantomasWebsite\Page\Type;
 
 /**
  * Interface for building a archive search criteria
@@ -29,11 +29,11 @@ interface SearchInterface
     public function setDateRange(DateRange $dateRange);
 
     /**
-     * @param PageType $pageType
+     * @param Type $type
      *
      * @return void
      */
-    public function setPageType(PageType $pageType);
+    public function setPageType(Type $type);
 
     /**
      * @return array

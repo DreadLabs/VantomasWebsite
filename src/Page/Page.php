@@ -22,9 +22,9 @@ class Page
 {
 
     /**
-     * @var PageId
+     * @var Identifier
      */
-    private $id;
+    private $identifier;
 
     /**
      * @var string
@@ -62,19 +62,19 @@ class Page
     private $teaserImage;
 
     /**
-     * @param PageId $pageId
+     * @param Identifier $identifier
      */
-    public function __construct(PageId $pageId)
+    public function __construct(Identifier $identifier)
     {
-        $this->id = $pageId;
+        $this->identifier = $identifier;
     }
 
     /**
-     * @return PageId
+     * @return Identifier
      */
-    public function getId()
+    public function getIdentifier()
     {
-        return $this->id;
+        return $this->identifier;
     }
 
     /**

@@ -12,7 +12,7 @@
 namespace DreadLabs\VantomasWebsite\Tests\Unit\Page;
 
 use DreadLabs\VantomasWebsite\Page\Page;
-use DreadLabs\VantomasWebsite\Page\PageId;
+use DreadLabs\VantomasWebsite\Page\Identifier;
 use DreadLabs\VantomasWebsite\TeaserImage;
 
 /**
@@ -25,21 +25,21 @@ class PageTest extends \PHPUnit_Framework_TestCase
 
     public function testConstruction()
     {
-        $pageIdMock = $this->getPageIdMock();
-        $sut = new Page($pageIdMock);
+        $identifierMock = $this->getIdentifierMock();
+        $sut = new Page($identifierMock);
 
-        $this->assertSame($pageIdMock, $sut->getId());
+        $this->assertSame($identifierMock, $sut->getIdentifier());
     }
 
-    protected function getPageIdMock()
+    protected function getIdentifierMock()
     {
-        return $this->getMockBuilder(PageId::class)->disableOriginalConstructor()->getMock();
+        return $this->getMockBuilder(Identifier::class)->disableOriginalConstructor()->getMock();
     }
 
     public function testTitleAccessors()
     {
-        $pageIdMock = $this->getPageIdMock();
-        $sut = new Page($pageIdMock);
+        $identifierMock = $this->getIdentifierMock();
+        $sut = new Page($identifierMock);
 
         $title = 'Acme Inc.';
         $sut->setTitle($title);
@@ -49,8 +49,8 @@ class PageTest extends \PHPUnit_Framework_TestCase
 
     public function testLastUpdatedAtAccessors()
     {
-        $pageIdMock = $this->getPageIdMock();
-        $sut = new Page($pageIdMock);
+        $identifierMock = $this->getIdentifierMock();
+        $sut = new Page($identifierMock);
 
         $lastUpdatedAt = new \DateTime();
         $sut->setLastUpdatedAt($lastUpdatedAt);
@@ -60,8 +60,8 @@ class PageTest extends \PHPUnit_Framework_TestCase
 
     public function testAbstractAccessors()
     {
-        $pageIdMock = $this->getPageIdMock();
-        $sut = new Page($pageIdMock);
+        $identifierMock = $this->getIdentifierMock();
+        $sut = new Page($identifierMock);
 
         $abstract = 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut';
         $sut->setAbstract($abstract);
@@ -71,8 +71,8 @@ class PageTest extends \PHPUnit_Framework_TestCase
 
     public function testSubTitleAccessors()
     {
-        $pageIdMock = $this->getPageIdMock();
-        $sut = new Page($pageIdMock);
+        $identifierMock = $this->getIdentifierMock();
+        $sut = new Page($identifierMock);
 
         $subTitle = 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr';
         $sut->setSubTitle($subTitle);
@@ -82,8 +82,8 @@ class PageTest extends \PHPUnit_Framework_TestCase
 
     public function testKeywordsAccessors()
     {
-        $pageIdMock = $this->getPageIdMock();
-        $sut = new Page($pageIdMock);
+        $identifierMock = $this->getIdentifierMock();
+        $sut = new Page($identifierMock);
 
         $keywords = 'Lorem, ipsum, dolor, sit, amet';
         $sut->setKeywords($keywords);
@@ -93,8 +93,8 @@ class PageTest extends \PHPUnit_Framework_TestCase
 
     public function testCreatedAtAccessors()
     {
-        $pageIdMock = $this->getPageIdMock();
-        $sut = new Page($pageIdMock);
+        $identifierMock = $this->getIdentifierMock();
+        $sut = new Page($identifierMock);
 
         $createdAt = new \DateTime();
         $sut->setCreatedAt($createdAt);
@@ -104,8 +104,8 @@ class PageTest extends \PHPUnit_Framework_TestCase
 
     public function testTeaserImageAccessors()
     {
-        $pageIdMock = $this->getPageIdMock();
-        $sut = new Page($pageIdMock);
+        $identifierMock = $this->getIdentifierMock();
+        $sut = new Page($identifierMock);
 
         $teaserImage = TeaserImage\Resource::createFromPublicUrl('/path/to/image.jpg');
         $sut->setTeaserImage($teaserImage);

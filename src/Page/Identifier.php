@@ -12,11 +12,11 @@
 namespace DreadLabs\VantomasWebsite\Page;
 
 /**
- * PageType
+ * Identifier
  *
  * @author Thomas Juhnke <dev@van-tomas.de>
  */
-class PageType
+class Identifier
 {
 
     /**
@@ -24,9 +24,8 @@ class PageType
      */
     private $value;
 
-    public function __construct($pageType)
+    private function __construct()
     {
-        $this->value = (int) $pageType;
     }
 
     /**
@@ -38,12 +37,15 @@ class PageType
     }
 
     /**
-     * @param string $pageType
+     * @param string $value
      *
-     * @return self
+     * @return Identifier
      */
-    public static function fromString($pageType)
+    public static function fromString($value)
     {
-        return new static($pageType);
+        $identifier = new Identifier;
+        $identifier->value = (int) $value;
+
+        return $identifier;
     }
 }

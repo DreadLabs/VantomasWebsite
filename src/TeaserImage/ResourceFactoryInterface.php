@@ -11,7 +11,7 @@
 
 namespace DreadLabs\VantomasWebsite\TeaserImage;
 
-use DreadLabs\VantomasWebsite\Page\PageId;
+use DreadLabs\VantomasWebsite\Page\Identifier;
 
 /**
  * ResourceFactoryInterface
@@ -22,9 +22,9 @@ interface ResourceFactoryInterface
 {
 
     /**
-     * @param PageId $pageId
+     * @param Identifier $identifier
      *
      * @return Resource
      */
-    public function createFromPageId(PageId $pageId);
+    public function createFromPageIdentifier(Identifier $identifier);
 }

@@ -11,7 +11,7 @@
 
 namespace DreadLabs\VantomasWebsite\Sitemap;
 
-use DreadLabs\VantomasWebsite\Page\PageIdCollectionInterface;
+use DreadLabs\VantomasWebsite\Page\IdentifierCollection;
 
 /**
  * ConfigurationInterface
@@ -22,12 +22,12 @@ interface ConfigurationInterface
 {
 
     /**
-     * @return PageIdCollectionInterface
+     * @return IdentifierCollection
      */
-    public function getParentPageIds();
+    public function getParentPageIdentifiers();
 
     /**
-     * @return PageIdCollectionInterface
+     * @return IdentifierCollection
      */
-    public function getExcludePageIds();
+    public function getExcludePageIdentifiers();
 }

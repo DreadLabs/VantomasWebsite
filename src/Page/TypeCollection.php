@@ -14,26 +14,26 @@ namespace DreadLabs\VantomasWebsite\Page;
 use Traversable;
 
 /**
- * PageIdCollection
+ * TypeCollection
  *
  * @author Thomas Juhnke <dev@van-tomas.de>
  */
-class PageIdCollection implements PageIdCollectionInterface
+class TypeCollection implements \Countable, \ArrayAccess, \IteratorAggregate
 {
 
     /**
      * @var array
      */
-    private $pageIds;
+    private $types;
 
     /**
-     * Retrieve the iterator for PageIds
+     * Retrieve the iterator for Types
      *
      * @return Traversable An instance of an object implementing Iterator or Traversable
      */
     public function getIterator()
     {
-        return new \ArrayIterator($this->pageIds);
+        return new \ArrayIterator($this->types);
     }
 
     /**
@@ -45,7 +45,7 @@ class PageIdCollection implements PageIdCollectionInterface
      */
     public function offsetExists($offset)
     {
-        return isset($this->pageIds[$offset]);
+        return isset($this->types[$offset]);
     }
 
     /**
@@ -53,11 +53,11 @@ class PageIdCollection implements PageIdCollectionInterface
      *
      * @param mixed $offset The offset to retrieve.
      *
-     * @return PageId
+     * @return Type
      */
     public function offsetGet($offset)
     {
-        return $this->pageIds[$offset];
+        return $this->types[$offset];
     }
 
     /**
@@ -71,10 +71,12 @@ class PageIdCollection implements PageIdCollectionInterface
     public function offsetSet($offset, $value)
     {
         if (!isset($offset)) {
-            $this->pageIds[] = $value;
-        } else {
-            $this->pageIds[$offset] = $value;
+            $this->types[] = $value;
+
+            return;
         }
+
+        $this->types[$offset] = $value;
     }
 
     /**
@@ -86,33 +88,35 @@ class PageIdCollection implements PageIdCollectionInterface
      */
     public function offsetUnset($offset)
     {
-        if ($offset instanceof PageId) {
-            $this->pageIds = array_filter($this->pageIds, function ($pageId) use ($offset) {
-                return $pageId !== $offset;
+        if ($offset instanceof Type) {
+            $this->types = array_filter($this->types, function ($type) use ($offset) {
+                return $type !== $offset;
             });
-        } else {
-            unset($this->pageIds[$offset]);
+
+            return;
         }
+
+        unset($this->types[$offset]);
     }
 
     /**
-     * @param PageId $pageId
+     * @param Type $type
      *
      * @return void
      */
-    public function add(PageId $pageId)
+    public function add(Type $type)
     {
-        $this->offsetSet(null, $pageId);
+        $this->offsetSet(null, $type);
     }
 
     /**
-     * @param PageId $pageId
+     * @param Type $type
      *
      * @return void
      */
-    public function remove(PageId $pageId)
+    public function remove(Type $type)
     {
-        $this->offsetUnset($pageId);
+        $this->offsetUnset($type);
     }
 
     /**
@@ -120,7 +124,7 @@ class PageIdCollection implements PageIdCollectionInterface
      */
     public function toArray()
     {
-        return $this->pageIds;
+        return $this->types;
     }
 
     /**
@@ -130,6 +134,6 @@ class PageIdCollection implements PageIdCollectionInterface
      */
     public function count()
     {
-        return count($this->pageIds);
+        return count($this->types);
     }
 }

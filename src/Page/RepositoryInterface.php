@@ -17,11 +17,11 @@ use DreadLabs\VantomasWebsite\Sitemap\ConfigurationInterface as SitemapConfigura
 use DreadLabs\VantomasWebsite\Taxonomy\Tag;
 
 /**
- * PageRepositoryInterface
+ * RepositoryInterface
  *
  * @author Thomas Juhnke <dev@van-tomas.de>
  */
-interface PageRepositoryInterface
+interface RepositoryInterface
 {
 
     /**
@@ -34,15 +34,15 @@ interface PageRepositoryInterface
     public function findArchived(SearchInterface $search);
 
     /**
-     * Finds last updated pages of type $pageType
+     * Finds last updated pages of type $type
      *
-     * @param PageType $pageType
+     * @param Type $type
      * @param int $offset
      * @param int $limit
      *
      * @return Page[]
      */
-    public function findLastUpdated(PageType $pageType, $offset = 0, $limit = 1);
+    public function findLastUpdated(Type $type, $offset = 0, $limit = 1);
 
     /**
      * Finds all pages with tags

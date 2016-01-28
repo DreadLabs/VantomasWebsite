@@ -11,7 +11,7 @@
 
 namespace DreadLabs\VantomasWebsite\RssFeed;
 
-use DreadLabs\VantomasWebsite\Page\PageTypeCollectionInterface;
+use DreadLabs\VantomasWebsite\Page\TypeCollection;
 
 /**
  * ConfigurationInterface
@@ -22,7 +22,7 @@ interface ConfigurationInterface
 {
 
     /**
-     * @return PageTypeCollectionInterface
+     * @return TypeCollection
      */
     public function getPageTypes();
 
